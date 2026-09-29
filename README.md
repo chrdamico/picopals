@@ -4,7 +4,7 @@ A nonogram (picross) game for the phone. Every solved grid flips into colour, th
 
 ## Content
 
-- **Journey:** 15 themed worlds of hand-drawn pals, from 5×5 tutorials to 20×20 showpieces. Two worlds are colour nonograms. Solve half of a world to open the next.
+- **Journey:** 15 themed worlds, 228 hand-drawn pals, from 5×5 tutorials to 20×20 showpieces. Two worlds are colour nonograms. Solve half of a world to open the next.
 - **Hatchery:** endless generated puzzles. Each one hatches a unique critter with a name, a blurb and a rarity (common to legendary).
 - **Daily:** one generated pal per day, the same for everyone, with a theme per weekday and a streak.
 - **Album:** every pal you met, animated again on tap.
