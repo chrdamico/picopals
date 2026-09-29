@@ -265,6 +265,17 @@ export function makeCritter(seed, size = 15, opts = {}) {
       C[y][x] = v === 2 ? 'x' : v === 3 ? 'g' : v === 4 ? 'g' : v === 5 ? 'a' : 'b';
     }
   }
+  if (!small) {
+    const rim = [];
+    for (let y = 0; y < H; y++) {
+      for (let x = 0; x < W; x++) {
+        if (C[y][x] !== 'b') continue;
+        const edge = [[1, 0], [-1, 0], [0, 1], [0, -1]].some(([dx, dy]) => !inb(x + dx, y + dy) || C[y + dy][x + dx] === 'o' || C[y + dy][x + dx] === '.');
+        if (edge) rim.push([x, y]);
+      }
+    }
+    for (const [x, y] of rim) C[y][x] = 'r';
+  }
   if (earCells.length && ['cat', 'fox', 'bear', 'bunny'].includes(type)) {
     for (const [x, y] of earCells) {
       const interior = [[1, 0], [-1, 0], [0, 1], [0, -1]].every(([dx, dy]) => inMask(x + dx, y + dy));
@@ -418,6 +429,7 @@ export function makeCritter(seed, size = 15, opts = {}) {
   let pal = {
     o: hsl(hue, Math.min(60, sBody), 30),
     b: hsl(hue, sBody, lBody),
+    r: hsl(hue, sBody, lBody),
     l: hsl(hue, sBody * 0.9, Math.min(95, lBody + 13)),
     a: type === 'shroom' ? hsl(pick([355, 8, 280, 200]), 72, 58) : hsl(hue + pick([30, 150, 180, 210, -30]), 70, 66),
     e: '#2B2233',
@@ -431,10 +443,12 @@ export function makeCritter(seed, size = 15, opts = {}) {
   if (type === 'bird') pal.x = '#FF9F43';
   if (['cat', 'bear', 'bunny', 'fox'].includes(type) && R() < 0.7) pal.a = hsl(345, 85, 80);
   if (type === 'shroom') pal.l = '#FFF6EA', (pal.b = hsl(38, 60, 88)), (pal.o = hsl(20, 40, 32));
+  pal.r = pal.b;
   if (Math.abs(((hue - 345 + 540) % 360) - 180) < 25) pal.p = hsl(345, 95, 62);
   if (rarity.id === 'legendary') {
     const gold = R() < 0.5;
     pal = { ...pal, o: gold ? '#9A6A12' : hsl(265, 55, 28), b: gold ? '#FFD86B' : hsl(265, 70, 78), l: gold ? '#FFF1B8' : hsl(190, 80, 85), a: gold ? '#FFB23F' : hsl(320, 80, 72) };
+    pal.r = pal.b;
   }
 
   const art = C.map((r) => r.join(''));
@@ -483,13 +497,13 @@ export function critterPuzzle(seed, size, mode) {
     const s = (seed + attempt * 7919) >>> 0;
     const fig = makeCritter(s, size);
     const rr = mulberry32(s ^ 0x9e3779b9);
-    const optsList = (mode === 'color' ? ['hp', 'hpl', 'hpc', 'hpa'] : ['blhpc', 'bhp', 'bhpc', 'lhpk', 'ehkpl', 'ehk']).map((h) => [rr(), h]).sort((a, b) => a[0] - b[0]).map((x) => x[1]);
+    const optsList = (mode === 'color' ? ['hp', 'hpl', 'hpc', 'hpa'] : ['blhpc', 'blhpc', 'bhp', 'bhpc', 'lhpk', 'ehkpl', 'ehk']).map((h) => [rr(), h]).sort((a, b) => a[0] - b[0]).map((x) => x[1]);
     for (const holes of optsList) {
       const f = { ...fig, holes, seedUsed: s };
       const P = buildPuzzle(f, mode);
       if (mode === 'color' && (P.ncolors < 2 || P.ncolors > 5)) continue;
       const r = fill(P.sol);
-      if (r < 0.28 || r > 0.74) continue;
+      if (r < 0.26 || r > 0.74) continue;
       const ng = new Nonogram({ w: P.w, h: P.h, sol: P.sol, ncolors: P.ncolors });
       const { givens } = ng.findGivens({ maxCandidates: 60 });
       const score = givens.length / (P.w * P.h) + Math.abs(r - 0.5) * 0.1;
