@@ -8,7 +8,7 @@
     {
       "id": "macaron-tower", "name": "Macaron Tower", "blurb": "Six best friends stacked for a party. The bottom row does leg day.",
       "motion": "wiggle", "fx": "sparkles",
-      "pal": { "P": "#FF8FB8", "M": "#7FDDC0", "L": "#B89CFF", "Y": "#FFD86B", "F": "#FFF3DE", "e": "#4A2A3A" },
+      "pal": { "P": "#FF8FB8", "M": "#7FDDC0", "L": "#B89CFF", "Y": "#FFD86B", "F": "#FFEEDD", "e": "#4A2A3A" },
       "holes": "e",
       "art": [
         "......PPP......",
@@ -29,33 +29,9 @@
       ]
     },
     {
-      "id": "hot-cocoa", "name": "Hot Cocoa", "blurb": "Warm hugs in a mug. Marshmallows are not optional.",
-      "motion": "bounce", "fx": "steam",
-      "pal": { "l": "#B89CFF", "c": "#8A4A2A", "w": "#FFF6EC", "m": "#FF9FC8", "h": "#FFFFFF", "e": "#3A2A4A", "k": "#FF8FB8" },
-      "holes": "hek",
-      "art": [
-        "....www.........",
-        "...wwwwww.......",
-        "..wwwwwwwwmm....",
-        ".mmwwwwwwwmm....",
-        "lmmccccccccl....",
-        "lcllllllllll....",
-        "lcllllllllll....",
-        "llllllllllllll..",
-        "lllhllllhlll..l.",
-        "lllellllelll..l.",
-        "llkllllllklllll.",
-        "llllllllllll....",
-        "llllllllllll....",
-        ".llllllllll.....",
-        "mmmmmmmmmmmmmm..",
-        "..mmmmmmmmmm...."
-      ]
-    },
-    {
       "id": "cotton-candy-sheep", "name": "Cotton Candy Sheep", "blurb": "Its wool is spun sugar. Shearing season is a party.",
       "motion": "float", "fx": "hearts",
-      "pal": { "P": "#FFA8D0", "B": "#9AD4FF", "F": "#FFF1E0", "D": "#6A4A6A", "e": "#3A2A3A", "h": "#FFFFFF", "k": "#FF8FB8" },
+      "pal": { "P": "#FFA8D0", "B": "#9AD4FF", "F": "#FFEEDD", "D": "#6A4A6A", "e": "#3A2A3A", "h": "#FFFFFF", "k": "#FF8FB8" },
       "holes": "ehk",
       "art": [
         "...PP.PPP.PP....",
@@ -78,7 +54,7 @@
     {
       "id": "strawberry-cow", "name": "Strawberry Cow", "blurb": "Makes pink milk, obviously. Wears its fruit hat to every meeting.",
       "motion": "hop", "fx": "hearts",
-      "pal": { "g": "#4DB86A", "r": "#F0434F", "W": "#FFF8F4", "P": "#FF9FC0", "y": "#FFE08A", "e": "#3A2030", "h": "#FFFFFF", "k": "#FF7FA0", "d": "#D0607A" },
+      "pal": { "g": "#4DB86A", "r": "#F0434F", "W": "#FFEEDD", "P": "#FF9FC0", "y": "#FFE08A", "e": "#3A2030", "h": "#FFFFFF", "k": "#FF7FA0", "d": "#D0607A" },
       "holes": "yehkd",
       "art": [
         ".......gg.......",
@@ -125,34 +101,32 @@
       ]
     },
     {
-      "id": "pancake-stack", "name": "Pancake Stack", "blurb": "Three layers of fluffy, one river of syrup, zero regrets.",
-      "motion": "jelly", "fx": "steam",
-      "pal": { "t": "#F7C46C", "d": "#D9853A", "s": "#8A4520", "r": "#F0434F", "g": "#4DB86A", "b": "#BFE3FF", "e": "#4A2A12", "h": "#FFFFFF", "k": "#FF8F7A", "y": "#FFE9A8" },
-      "holes": "ehky",
+      "id": "mochi-trio", "name": "Mochi Trio", "blurb": "Soft, squishy and stuck together. The middle one wears a strawberry.",
+      "motion": "jelly", "fx": "petals",
+      "pal": { "W": "#FFEEDD", "P": "#FFB3CF", "G": "#9ED67A", "R": "#F0434F", "B": "#C8905A", "e": "#3A2A2A", "k": "#FF8FA8", "y": "#FFE08A" },
+      "holes": "eky",
       "art": [
-        ".......gg.......",
-        "......rggr......",
-        "......ryrr......",
-        ".......rr.......",
-        "..ssssssssssss..",
-        ".ssssssssssssss.",
-        "tttssttttttssttt",
-        "tttsttttttttsttt",
-        ".dddddddddddsdd.",
-        "ttttthtttthtsttt",
-        "tttktettttetkttt",
-        ".dddddddddddddd.",
-        "tttttttttttttttt",
-        "tttttttttttttttt",
-        ".dddddddddddddd.",
-        "bbbbbbbbbbbbbbbb",
-        "..bbbbbbbbbbbb.."
+        ".........GG.........",
+        "........RRRR........",
+        "........RyRR........",
+        "........WRRW........",
+        ".......WWWWWW.......",
+        "......WWWWWWWW......",
+        "......WWWWWWWW......",
+        ".PPPP.WWeWWeWW.GGGG.",
+        "PPPPPPWkWWWWkWGGGGGG",
+        "PePPePWWWWWWWWGeGGeG",
+        "kPPPPkWWWWWWWWkGGGGk",
+        "PPPPPPWWWWWWWWGGGGGG",
+        ".PPPP..WWWWWW..GGGG.",
+        "BBBBBBBBBBBBBBBBBBBB",
+        "..BBBBBBBBBBBBBBBB.."
       ]
     },
     {
       "id": "rainbow-cat", "name": "Rainbow Cat", "blurb": "Naps on rainbows. Claims the pot of gold is its food bowl.",
       "motion": "hop", "fx": "stars",
-      "pal": { "w": "#FFF3E6", "P": "#FF8FB8", "Y": "#FFD86B", "M": "#7FDDC0", "B": "#8CC8FF", "e": "#3A2A3A", "h": "#FFFFFF", "k": "#FF9FC0" },
+      "pal": { "w": "#FFEEDD", "P": "#FF8FB8", "Y": "#FFD86B", "M": "#7FDDC0", "B": "#8CC8FF", "e": "#3A2A3A", "h": "#FFFFFF", "k": "#FF9FC0" },
       "holes": "ehk",
       "art": [
         "...ww......ww...",
@@ -171,6 +145,31 @@
         "PPYMBB....BBMYPP",
         "PYMMB......BMMYP",
         "PYMB........BMYP"
+      ]
+    },
+    {
+      "id": "lollipop-bear", "name": "Lollipop Bear", "blurb": "Found the biggest lollipop in town. Sharing is still under review.",
+      "motion": "hop", "fx": "hearts",
+      "pal": { "b": "#B87A4B", "t": "#F2D2A9", "p": "#FF7FB6", "m": "#7FDDC0", "e": "#3A2418", "h": "#FFFFFF", "k": "#FF9FB0", "d": "#3A2418" },
+      "holes": "ehkd",
+      "art": [
+        "............ppp..",
+        "bbb....bbb.pmmmp.",
+        "bpbbbbbbpbpmpppmp",
+        "bbbbbbbbbbpmpmpmp",
+        "bbhebbhebbpmpppmp",
+        "bbeebbeebb.pmmmp.",
+        "bkbttttbkb..ppp..",
+        "bbttddttbb...t...",
+        ".bbttttbb....t...",
+        "..bbbbbb.....t...",
+        ".bbbbbbbb....t...",
+        "bbbttttbbbbbbbb..",
+        "bbttttttbb...t...",
+        "bbttttttbb...t...",
+        "bbbttttbbb.......",
+        ".bbbbbbbb........",
+        "bbbb..bbbb......."
       ]
     },
     {
@@ -202,7 +201,7 @@
     {
       "id": "unicorn-cake", "name": "Unicorn Cake", "article": "a", "blurb": "Too magical to cut. Everyone just stares at it lovingly.",
       "motion": "glow", "fx": "sparkles",
-      "pal": { "Y": "#FFD23F", "W": "#FFF8F4", "P": "#FF8FB8", "L": "#B89CFF", "M": "#7FDDC0", "e": "#4A2A4A", "k": "#FF9FC0" },
+      "pal": { "Y": "#FFD23F", "W": "#FFEEDD", "P": "#FF8FB8", "L": "#B89CFF", "M": "#7FDDC0", "e": "#4A2A4A", "k": "#FF9FC0" },
       "holes": "ek",
       "art": [
         "........YY........",
@@ -228,7 +227,7 @@
     {
       "id": "gingerbread-house", "name": "Gingerbread House", "blurb": "Built from biscuit and frosting. The neighbours keep nibbling.",
       "motion": "bounce", "fx": "snow",
-      "pal": { "b": "#C8814A", "d": "#7A4428", "w": "#FFF8F0", "p": "#FF6FA8", "m": "#4FD1A5", "y": "#FFD23F", "e": "#3A2014", "h": "#FFFFFF", "k": "#FF9FB0" },
+      "pal": { "b": "#C8814A", "d": "#7A4428", "w": "#FFEEDD", "p": "#FF6FA8", "m": "#4FD1A5", "y": "#FFD23F", "e": "#3A2014", "h": "#FFFFFF", "k": "#FF9FB0" },
       "holes": "ehk",
       "art": [
         ".......ww.......",
@@ -252,7 +251,7 @@
     {
       "id": "bubble-tea-cat", "name": "Bubble Tea Cat", "blurb": "Milk tea on the outside, pearls in the belly. Purrs through a straw.",
       "motion": "wiggle", "fx": "bubbles",
-      "pal": { "t": "#E8C39E", "w": "#FFF6EC", "p": "#FF7FB6", "d": "#5A3428", "e": "#3A2420", "h": "#FFFFFF", "k": "#FF9F9F", "o": "#5A3428" },
+      "pal": { "t": "#E8C39E", "w": "#FFEEDD", "p": "#FF7FB6", "d": "#5A3428", "e": "#3A2420", "h": "#FFFFFF", "k": "#FF9F9F", "o": "#5A3428" },
       "holes": "ehko",
       "art": [
         "...........pp..",
@@ -278,7 +277,7 @@
     {
       "id": "sundae", "name": "Ice Cream Sundae", "blurb": "Built tall on purpose. The cherry insisted on the top floor.",
       "motion": "wiggle", "fx": "sparkles",
-      "pal": { "r": "#E8324A", "m": "#6FD6B4", "w": "#FFF6EC", "p": "#FF8FB8", "c": "#BFE3FF", "y": "#F2C46B", "h": "#FFFFFF", "e": "#4A2A3A", "k": "#FF5C8A" },
+      "pal": { "r": "#E8324A", "m": "#6FD6B4", "w": "#FFEEDD", "p": "#FF8FB8", "c": "#BFE3FF", "y": "#F2C46B", "h": "#FFFFFF", "e": "#4A2A3A", "k": "#FF5C8A" },
       "holes": "hek",
       "art": [
         "........m.......",

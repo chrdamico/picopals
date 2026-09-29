@@ -58,20 +58,21 @@
       ]
     },
     {
-      "id": "pumpkin", "name": "Pumpkin", "blurb": "Round, orange and not at all spooky. Promise.",
-      "motion": "bounce", "fx": "leaves",
-      "pal": { "o": "#FF8C2A", "g": "#4DB86A", "d": "#E0701A", "e": "#4A2A12", "p": "#FFB3A0" },
-      "holes": "dep",
+      "id": "pear", "name": "Pear", "blurb": "Shaped like a hug waiting to happen. Ripens best when nobody watches.",
+      "motion": "wiggle", "fx": "leaves",
+      "pal": { "p": "#A8D85A", "b": "#8A5A3A", "e": "#2A3A1A", "k": "#FFA8A0" },
+      "holes": "ek",
       "art": [
-        "....gg.gg.",
-        ".oodoodoo.",
-        "ooodoodooo",
-        "oooooooooo",
-        "ooeooooeoo",
-        "oopoooopoo",
-        "oooooooooo",
-        "ooodoodooo",
-        ".oodoodoo."
+        "....b...",
+        "....b...",
+        "...pp...",
+        "..pppp..",
+        "..pppp..",
+        ".pppppp.",
+        "pppppppp",
+        "ppeppepp",
+        "pkppppkp",
+        ".pppppp."
       ]
     },
     {
@@ -111,20 +112,19 @@
       ]
     },
     {
-      "id": "onigiri", "name": "Rice Ball", "blurb": "Wears a seaweed jacket and hides a secret filling.",
-      "motion": "bounce", "fx": "steam",
-      "pal": { "w": "#F7EEDD", "k": "#2A3A34", "e": "#2A2A2A", "p": "#FFB3BF" },
-      "holes": "ep",
+      "id": "banana", "name": "Banana", "blurb": "Always smiling, never bruised about it. Peels out of shyness.",
+      "motion": "wiggle", "fx": "sparkles",
+      "pal": { "y": "#FFDD4A", "b": "#8A5A2A", "e": "#4A3A12", "k": "#FFA8A0" },
+      "holes": "ek",
       "art": [
-        "....ww....",
-        "...wwww...",
-        "..wwwwww..",
-        ".wwwwwwww.",
-        ".wwewweww.",
-        "wwpwwwwpww",
-        "wwwkkkkwww",
-        "wwwkkkkwww",
-        ".wwkkkkww."
+        ".........b",
+        "........yb",
+        "b......yyy",
+        "yy....yyyy",
+        "yyy.yyyyyy",
+        ".yyyeyyey.",
+        ".yyykyyk..",
+        "...yyyy..."
       ]
     },
     {
@@ -179,39 +179,21 @@
       ]
     },
     {
-      "id": "eggplant", "name": "Eggplant", "blurb": "Deep purple, deeply chill. Wears a leafy beret.",
-      "motion": "wiggle", "fx": "sparkles",
-      "pal": { "v": "#8E5BD6", "g": "#4DB86A", "e": "#2A1A3A", "p": "#E8A0E0" },
-      "holes": "ep",
+      "id": "snowman", "name": "Snowman", "blurb": "Chill by nature. Warm heart, cold feet.",
+      "motion": "wiggle", "fx": "snow",
+      "pal": { "w": "#EEF2FF", "r": "#F0434F", "k": "#3A3A5A", "e": "#2A2A3A", "o": "#FF9F2A", "p": "#FFB3BF" },
+      "holes": "eop",
       "art": [
-        "......gg..",
-        "....gggggg",
-        "....vvgg..",
-        "...vvvvv..",
-        "..vvvvvvv.",
-        ".vvvvvvvv.",
-        "vvevvevvv.",
-        "vpvvvvpvv.",
-        "vvvvvvvv..",
-        ".vvvvvv..."
-      ]
-    },
-    {
-      "id": "cactus", "name": "Cactus", "blurb": "Prickly outside, softie inside. Needs a hug, carefully.",
-      "motion": "sway", "fx": "petals",
-      "pal": { "g": "#4DB86A", "o": "#E0784A", "f": "#FF6FA8", "e": "#1F3A24", "p": "#FFB3BF" },
-      "holes": "ep",
-      "art": [
-        "...fff...",
-        "..ggggg..",
-        "g.ggggg.g",
-        "g.gegeg.g",
-        "ggpgggpgg",
-        "..ggggg..",
-        "ooooooooo",
-        ".ooooooo.",
-        "..ooooo..",
-        "..ooooo.."
+        "..kkkk..",
+        "..kkkk..",
+        ".kkkkkk.",
+        "..wwww..",
+        ".wewwew.",
+        ".pwwowp.",
+        ".rrrrrr.",
+        "wwwwwrww",
+        "wwwkwrww",
+        ".wwwwww."
       ]
     },
     {
@@ -263,6 +245,24 @@
         ".glrrrrlg.",
         "..gllllg..",
         "...gggg..."
+      ]
+    },
+    {
+      "id": "kiwi", "name": "Kiwi", "blurb": "Fuzzy brown coat, bright green soul. Seeds are its freckles.",
+      "motion": "bounce", "fx": "sparkles",
+      "pal": { "b": "#8A5A3A", "g": "#7CC242", "c": "#F4F0C8", "s": "#2A2A1A", "e": "#2A2A1A" },
+      "holes": "se",
+      "art": [
+        "...bbbb...",
+        ".bbggggbb.",
+        ".bgsggsgb.",
+        "bgsccccsgb",
+        "bgceccecgb",
+        "bsccccccsb",
+        "bgsccccsgb",
+        ".bgsggsgb.",
+        ".bbggggbb.",
+        "...bbbb..."
       ]
     },
     {
