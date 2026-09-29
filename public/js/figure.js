@@ -336,6 +336,7 @@ export class FigureStage {
     this.fitH = opts.fitH ?? opts.fit ?? 0.72;
     this.maxCell = opts.maxCell ?? 40;
     this.anchorY = opts.anchorY ?? 0.5;
+    this.anchorX = opts.anchorX ?? 0.5;
     this.onPop = opts.onPop || null;
     this.onFlipTick = opts.onFlipTick || null;
     this.parts = [];
@@ -370,7 +371,7 @@ export class FigureStage {
     this.s = this.sd / dpr;
     this.W = w * this.s;
     this.H = h * this.s;
-    this.cx = this.cw / 2;
+    this.cx = this.cw * this.anchorX;
     this.cy = this.ch * this.anchorY;
     this.open = renderSprite(this.cells, this.sd);
     this.shut = renderSprite(this.cells, this.sd, { closed: true });

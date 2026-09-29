@@ -582,7 +582,7 @@ export class Game {
       lines.add(Math.floor(i / this.w));
       lines.add(this.h + (i % this.w));
     }
-    if (db.settings.autocross && changes.some((c) => c[2] > 0 || c[1] > 0)) this.autoCross(lines, changes);
+    if (db.settings.autocross && (s.mist || changes.some((c) => c[2] > 0 || c[1] > 0))) this.autoCross(lines, changes);
     this.commit(changes, lines);
   }
 

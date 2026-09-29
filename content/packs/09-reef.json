@@ -12,7 +12,7 @@
       "holes": "ehw",
       "art": [
         ".....kkkk.....",
-        "....koooook...",
+        "....koooookk..",
         "..kkkkkkkkk.kk",
         ".koowwooowwkok",
         "kohewwooowwook",
@@ -31,18 +31,18 @@
       "pal": { "k": "#1B2A6B", "b": "#3A7BEA", "y": "#FFD23F", "p": "#FF9FC0", "e": "#2B2233", "h": "#FFFFFF" },
       "holes": "eh",
       "art": [
-        "..............",
-        ".....kk.......",
-        "..kkkbbkkk....",
-        ".kbbkkkbkkk..k",
-        "kbbbkbbbbbkkkk",
-        "kbhekbbbbbkbyk",
-        "kbeekkkbkkkkyk",
-        "kbpbbbbbbbbkkk",
-        ".kbbyybbbbk..k",
-        "..kkkbbkkk....",
-        ".....kk.......",
-        ".............."
+        ".....kkkk......",
+        "...kkbbbbkk....",
+        "..kbbbbbbbbk...",
+        ".kbbbbkkkkbbk.k",
+        "kbbbbkbbbbkbkyk",
+        "kbhebkbbbbkkyyk",
+        "kbeebkbbbbkkyyk",
+        "kpbbbbkkkkbkyyk",
+        "kbbbbbbbbbbkyyk",
+        ".kbbyyybbbbkkyk",
+        "..kbbyybbbk..kk",
+        "...kkkkkkk....."
       ]
     },
     {
@@ -103,16 +103,16 @@
         "kyyreerreeryyk",
         "kryyrykkyryyrk",
         "kkryyryyryyrkk",
-        "..kkryyyyrkk..",
-        "....kyyyyk....",
-        "...kyyyyyyk...",
+        "..kkkyyyykkk..",
+        ".....krrk.....",
+        "...kkyyyykk...",
         "....kkkkkk...."
       ]
     },
     {
       "id": "coral", "name": "Coral", "blurb": "Looks like a plant, is actually an animal, just rolls with it.",
       "motion": "sway", "fx": "bubbles",
-      "pal": { "k": "#C23A5A", "c": "#FF7A8E", "l": "#FFD0D6", "s": "#F2D08A", "e": "#2B2233", "h": "#FFFFFF" },
+      "pal": { "k": "#C23A5A", "c": "#FF7A8E", "l": "#C9A8FF", "s": "#F2D08A", "e": "#2B2233", "h": "#FFFFFF" },
       "holes": "h",
       "art": [
         "......kk......",
@@ -138,7 +138,7 @@
       "holes": "eh",
       "art": [
         "....k..k....",
-        ".k..k..k..k.",
+        "....k..k....",
         "..k.kkkk.k..",
         "...kluuuk...",
         "kkkuuuuuukkk",
@@ -158,10 +158,10 @@
       "holes": "ehw",
       "art": [
         ".......kkkkkk.",
-        "....kkkssssssk",
-        "...ksssiiikkk.",
-        "..ksssswww....",
-        ".ksskkkwwww...",
+        "....kkkksssssk",
+        "...ksskiiikkk.",
+        "..ksksswww....",
+        ".kskkkkwwww...",
         ".ksk...www....",
         "kiiikkkiwwkkkk",
         "kssssssssssssk",
@@ -203,12 +203,12 @@
         ".kwwk..kwwk.",
         "..kwkkkkwk..",
         ".kwwwwwwwwk.",
-        "kwdwwwwwwdwk",
+        "kkdwwwwwwdwk",
         "kwwhewwhewwk",
         "kwweewweewwk",
         "kwpwwddwwpwk",
         "kwwdwwwwdwwk",
-        ".kwwwwwwwwk.",
+        ".kwwwwwwwkk.",
         "..kkkkkkkk.."
       ]
     },
@@ -238,7 +238,7 @@
     {
       "id": "axolotl", "name": "Axolotl", "blurb": "Smiles all the time. Nobody knows what it is up to.",
       "motion": "wiggle", "fx": "hearts",
-      "pal": { "k": "#C24E7E", "o": "#FFB6CF", "g": "#FF4F9A", "e": "#2B2233", "h": "#FFFFFF" },
+      "pal": { "k": "#8E3A62", "o": "#FFB6CF", "g": "#FF4F9A", "e": "#2B2233", "h": "#FFFFFF" },
       "holes": "h",
       "art": [
         "g.g........g.g",
@@ -261,7 +261,7 @@
       "pal": { "k": "#1C2660", "n": "#3D5AB8", "l": "#9FC3FF", "p": "#FF8FB8", "e": "#2B2233", "h": "#FFFFFF" },
       "holes": "eh",
       "art": [
-        "....k.....k....",
+        "....kk...kk....",
         "....k.....k....",
         "....kkkkkkk....",
         "...knhennhek...",
@@ -273,7 +273,7 @@
         ".....knnnk.....",
         "......knk......",
         ".......kk......",
-        "........kk....."
+        "..............."
       ]
     },
     {
@@ -299,21 +299,21 @@
     {
       "id": "seal-pup", "name": "Seal Pup", "blurb": "All whiskers and big eyes. Begs for fish, gets fish.",
       "motion": "wiggle", "fx": "hearts",
-      "pal": { "k": "#7F8FB0", "w": "#FFFFFF", "g": "#C4D2EC", "n": "#3A3048", "p": "#FF9FB8", "e": "#2B2233", "h": "#FFFFFF" },
-      "holes": "ehw",
+      "pal": { "k": "#4F5E82", "w": "#CBD6EA", "g": "#8C9CC0", "p": "#FF8FB0", "e": "#2B2233", "h": "#FFFFFF" },
+      "holes": "eh",
       "art": [
-        "....kkkkkk....",
-        "..kkwwwwwwkk..",
-        ".kwwwwwwwwwwk.",
-        ".kwwwwwwwwwwk.",
-        ".kwwhewwhewwk.",
-        ".kwweewweewwk.",
-        ".kwpwwnnwwpwk.",
-        "..kwwwwwwwwk..",
-        "..kwwggggwwk..",
-        ".kwwggggggwwk.",
-        "kkkkggggggkkkk",
-        "....kkkkkk...."
+        "..kkkkk........",
+        ".kwwwwwk.......",
+        "kwwwwwwwk......",
+        "kwhewwhewk...kk",
+        "kweewweewwkkkgk",
+        "kpwwppwwpwwwwgk",
+        ".kwwwwwwwwwwwkk",
+        ".kwwwwwwwwwwwgk",
+        "..kwwwwwwwwwkgk",
+        "...kkggkkkkk.kk",
+        "....kggk.......",
+        ".....kk........"
       ]
     },
     {
@@ -323,7 +323,7 @@
       "holes": "eh",
       "art": [
         "l..l..l..l..l",
-        "t..t..t..t..t",
+        "l..t..t..t..l",
         ".t.t..t..t.t.",
         ".t..t.t.t..t.",
         "..ttttttttt..",

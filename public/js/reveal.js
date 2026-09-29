@@ -21,6 +21,11 @@ export function starsHtml(n, total = 3) {
 
 let current = null;
 
+function stageLayout() {
+  const land = innerWidth > innerHeight && innerHeight < 560;
+  return land ? { fitW: 0.4, fitH: 0.62, maxCell: 26, anchorX: 0.3, anchorY: 0.46 } : { fitW: 0.72, fitH: 0.4, maxCell: 26, anchorY: 0.34 };
+}
+
 export function closeReveal() {
   current?.close(true);
 }
@@ -74,10 +79,7 @@ export function showReveal(o) {
     const total = puzzle.w * puzzle.h;
     let lastTick = 0;
     stage = new FigureStage(cv, fig, {
-      fitW: 0.72,
-      fitH: 0.4,
-      maxCell: 26,
-      anchorY: 0.34,
+      ...stageLayout(),
       intro: withIntro ? { from: fromRect, sol: puzzle.sol, colors: puzzle.colors, flyEnd, flipEnd: flyEnd + span + 0.35 } : null,
       onFlipTick: (n) => {
         const step = Math.max(1, Math.round(total / 14));
@@ -109,7 +111,7 @@ export function showReveal(o) {
     stage.stop();
     stage = null;
     if (popped) {
-      stage = new FigureStage(cv, fig, { fitW: 0.72, fitH: 0.4, maxCell: 26, anchorY: 0.33 });
+      stage = new FigureStage(cv, fig, stageLayout());
       stage.start();
     } else make(true, null);
   };

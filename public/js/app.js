@@ -359,7 +359,7 @@ function journeyScreen() {
       return `<button class="world-card ${open ? '' : 'locked'}" ${open ? `data-go="world/${w.id}"` : 'disabled'} style="--wc:${w.color}">
         <span class="w-num">${open ? wi + 1 : icon('lock')}</span>
         <span class="w-body">
-          <b>${esc(w.name)}${w.mode === 'color' ? ' <em class="col-badge">colour</em>' : ''}</b>
+          <b>${esc(w.name)}${w.mode === 'color' ? ' <em class="col-badge">colour</em>' : ''}${n === w.levels.length ? ` <em class="done-badge">${icon('check', 'inline')}</em>` : ''}</b>
           <small>${open ? esc(w.tagline) : lockMsg}</small>
           <span class="w-meta"><span class="bar"><i style="width:${pct}%"></i></span><span class="w-count">${n}/${w.levels.length}</span></span>
           <span class="w-thumbs">${open ? thumbsRow(w) : ''}<em>${sz}</em></span>
@@ -495,7 +495,7 @@ function playLevel(id) {
         color: w.color,
         tag: [no(lv.no), w.name],
         stats: { ...res, best: !!prev && best },
-        note: unlocked ? `New world unlocked: ${unlocked.name}!` : '',
+        note: unlocked ? `New world unlocked: ${unlocked.name}!` : !prev && solvedIn(w) === w.levels.length ? `${w.name} complete! All ${w.levels.length} pals found.` : '',
         actions,
       });
       if (unlocked) setTimeout(() => toast(`New world unlocked: <b>${esc(unlocked.name)}</b>`), 2600);
