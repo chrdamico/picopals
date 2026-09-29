@@ -1,0 +1,287 @@
+{
+  "id": "pop",
+  "name": "Colour Pop",
+  "tagline": "Your first puzzles in colour",
+  "mode": "color",
+  "color": "#FF5C7A",
+  "figures": [
+    {
+      "id": "balloon", "name": "Balloon", "blurb": "Full of hot air and proud of it.",
+      "motion": "float", "fx": "confetti",
+      "pal": { "r": "#FF5C7A", "s": "#6A5A7A", "e": "#3A1A2A", "h": "#FFFFFF" },
+      "holes": "eh",
+      "art": [
+        "..rrrr..",
+        ".rhrrrr.",
+        "rhrrrrrr",
+        "rrrrrrrr",
+        "rrerrerr",
+        ".rrrrrr.",
+        "..rrrr..",
+        "...ss...",
+        "....s...",
+        "...s...."
+      ]
+    },
+    {
+      "id": "strawberry", "name": "Strawberry", "blurb": "Wears its seeds on the outside. Very brave.",
+      "motion": "bounce", "fx": "hearts",
+      "pal": { "r": "#F0434F", "g": "#4DB86A", "e": "#3A1A22", "p": "#FFB3BF", "y": "#FFE08A" },
+      "holes": "epy",
+      "art": [
+        "...gg...",
+        ".gggggg.",
+        "rrggggrr",
+        "ryrggrry",
+        "rrrrrrrr",
+        "rrerrerr",
+        "rprrrrpr",
+        ".rrryrr.",
+        "..rrrr..",
+        "...rr..."
+      ]
+    },
+    {
+      "id": "lemon", "name": "Lemon", "blurb": "Sour on the outside, sunny on the inside.",
+      "motion": "bounce", "fx": "sparkles",
+      "pal": { "y": "#FFD83D", "g": "#4DB86A", "e": "#4A3A12", "p": "#FFA8A0" },
+      "holes": "ep",
+      "art": [
+        "......gg..",
+        "...yyyg...",
+        ".yyyyyyyy.",
+        ".yyyyyyyy.",
+        "yyyeyyeyyy",
+        ".ypyyyypy.",
+        ".yyyyyyyy.",
+        "...yyyy..."
+      ]
+    },
+    {
+      "id": "pumpkin", "name": "Pumpkin", "blurb": "Round, orange and not at all spooky. Promise.",
+      "motion": "bounce", "fx": "leaves",
+      "pal": { "o": "#FF8C2A", "g": "#4DB86A", "d": "#E0701A", "e": "#4A2A12", "p": "#FFB3A0" },
+      "holes": "dep",
+      "art": [
+        "....gg.gg.",
+        ".oodoodoo.",
+        "ooodoodooo",
+        "oooooooooo",
+        "ooeooooeoo",
+        "oopoooopoo",
+        "oooooooooo",
+        "ooodoodooo",
+        ".oodoodoo."
+      ]
+    },
+    {
+      "id": "pineapple", "name": "Pineapple", "blurb": "Spiky hair, sweet heart. A total rock star.",
+      "motion": "wiggle", "fx": "sparkles",
+      "pal": { "y": "#FFC93D", "g": "#3FAE5A", "d": "#E89A2A", "e": "#4A2A12", "p": "#FFA8A0" },
+      "holes": "dep",
+      "art": [
+        "...gg...",
+        ".g.gg.g.",
+        "..gggg..",
+        ".yyyyyy.",
+        "yydyydyy",
+        "yyyyyyyy",
+        "yyeyyeyy",
+        "ypyyyypy",
+        "ydyyyydy",
+        ".yyyyyy."
+      ]
+    },
+    {
+      "id": "duckling", "name": "Duckling", "blurb": "Follows you everywhere. You are now its mum.",
+      "motion": "march", "fx": "hearts",
+      "pal": { "y": "#FFD93D", "o": "#FF8C1A", "e": "#3A2A12" },
+      "holes": "e",
+      "art": [
+        "....y....",
+        "..yyyyy..",
+        ".yyyyyyy.",
+        ".yeyyyey.",
+        ".yyoooyy.",
+        "..yyyyy..",
+        ".yyyyyyy.",
+        "yyyyyyyyy",
+        ".yyyyyyy.",
+        "..oo.oo.."
+      ]
+    },
+    {
+      "id": "onigiri", "name": "Rice Ball", "blurb": "Wears a seaweed jacket and hides a secret filling.",
+      "motion": "bounce", "fx": "steam",
+      "pal": { "w": "#F7EEDD", "k": "#2A3A34", "e": "#2A2A2A", "p": "#FFB3BF" },
+      "holes": "ep",
+      "art": [
+        "....ww....",
+        "...wwww...",
+        "..wwwwww..",
+        ".wwwwwwww.",
+        ".wwewweww.",
+        "wwpwwwwpww",
+        "wwwkkkkwww",
+        "wwwkkkkwww",
+        ".wwkkkkww."
+      ]
+    },
+    {
+      "id": "frog", "name": "Frog", "blurb": "Sits on a lily pad and thinks big thoughts.",
+      "motion": "hop", "fx": "bubbles",
+      "pal": { "g": "#5BC06C", "e": "#2A2A3A", "h": "#FFFFFF", "p": "#FF9FB0" },
+      "holes": "hp",
+      "art": [
+        ".gg....gg.",
+        "gheg..gheg",
+        "geeggggeeg",
+        "gggggggggg",
+        "gpggeeggpg",
+        "gggggggggg",
+        ".gggggggg.",
+        "..gggggg.."
+      ]
+    },
+    {
+      "id": "fried-egg", "name": "Fried Egg", "blurb": "Sunny side up, every single morning.",
+      "motion": "jelly", "fx": "steam",
+      "pal": { "w": "#FFEBC7", "y": "#FFB627", "e": "#5A3A12", "p": "#FF9F7A", "h": "#FFFFFF" },
+      "holes": "eph",
+      "art": [
+        "..wwww....",
+        ".wwwwwww..",
+        "wwwyyyywww",
+        "wwyhyyyyww",
+        "wwyeyyeyww",
+        "wwpyyyypww",
+        "wwwyyyywww",
+        ".wwwwwwww.",
+        "...wwww..."
+      ]
+    },
+    {
+      "id": "cherries", "name": "Cherries", "article": "some", "blurb": "Twins joined at the stem. They finish each other's snacks.",
+      "motion": "wiggle", "fx": "hearts",
+      "pal": { "r": "#E8324A", "g": "#4DB86A", "e": "#3A1A22", "h": "#FFFFFF" },
+      "holes": "eh",
+      "art": [
+        "......ggg.",
+        "..gggggg..",
+        "..g....g..",
+        ".rrr...g..",
+        "rhrrr..g..",
+        "rerer.rrr.",
+        "rrrrrrhrrr",
+        ".rrr.rerer",
+        ".....rrrrr",
+        "......rrr."
+      ]
+    },
+    {
+      "id": "eggplant", "name": "Eggplant", "blurb": "Deep purple, deeply chill. Wears a leafy beret.",
+      "motion": "wiggle", "fx": "sparkles",
+      "pal": { "v": "#8E5BD6", "g": "#4DB86A", "e": "#2A1A3A", "p": "#E8A0E0" },
+      "holes": "ep",
+      "art": [
+        "......gg..",
+        "....gggggg",
+        "....vvgg..",
+        "...vvvvv..",
+        "..vvvvvvv.",
+        ".vvvvvvvv.",
+        "vvevvevvv.",
+        "vpvvvvpvv.",
+        "vvvvvvvv..",
+        ".vvvvvv..."
+      ]
+    },
+    {
+      "id": "cactus", "name": "Cactus", "blurb": "Prickly outside, softie inside. Needs a hug, carefully.",
+      "motion": "sway", "fx": "petals",
+      "pal": { "g": "#4DB86A", "o": "#E0784A", "f": "#FF6FA8", "e": "#1F3A24", "p": "#FFB3BF" },
+      "holes": "ep",
+      "art": [
+        "...fff...",
+        "..ggggg..",
+        "g.ggggg.g",
+        "g.gegeg.g",
+        "ggpgggpgg",
+        "..ggggg..",
+        "ooooooooo",
+        ".ooooooo.",
+        "..ooooo..",
+        "..ooooo.."
+      ]
+    },
+    {
+      "id": "penguin", "name": "Penguin", "blurb": "Dressed for a party, every day, just in case.",
+      "motion": "march", "fx": "snow",
+      "pal": { "n": "#2F3A5A", "w": "#EAF0FF", "o": "#FF9F2A", "e": "#1A1A2A", "p": "#FFB3BF" },
+      "holes": "ep",
+      "art": [
+        "..nnnnn..",
+        ".nnnnnnn.",
+        "nnwwnwwnn",
+        "nwewwwewn",
+        "nwpwowpwn",
+        "nnwwwwwnn",
+        "nnwwwwwnn",
+        ".nwwwwwn.",
+        "..nnnnn..",
+        "..oo.oo.."
+      ]
+    },
+    {
+      "id": "fox", "name": "Fox", "blurb": "Clever, quick and very fluffy about it.",
+      "motion": "wiggle", "fx": "leaves",
+      "pal": { "o": "#FF8A3D", "w": "#FFF1DC", "k": "#3A2A2A", "e": "#2A1A1A" },
+      "holes": "e",
+      "art": [
+        "oo......oo",
+        "oko....oko",
+        "okooooooko",
+        "oooooooooo",
+        "ooeooooeoo",
+        "woooooooow",
+        "wwwoooowww",
+        ".wwwwwwww.",
+        "....kk...."
+      ]
+    },
+    {
+      "id": "watermelon", "name": "Watermelon", "blurb": "Ninety percent water, ten percent summer.",
+      "motion": "bounce", "fx": "sparkles",
+      "pal": { "r": "#FF4F6A", "g": "#3FAE5A", "s": "#2A1A1A", "e": "#2A1A1A", "l": "#C8F0A0", "p": "#FFB3BF" },
+      "holes": "sep",
+      "art": [
+        "rrsrrrrrrr",
+        "rrrrrrrsrr",
+        "rsrrrrrrrr",
+        "lrrerrerrl",
+        "glprrrrplg",
+        ".glrrrrlg.",
+        "..gllllg..",
+        "...gggg..."
+      ]
+    },
+    {
+      "id": "avocado", "name": "Avocado", "blurb": "Keeps its heart safe in the middle. Emotionally ripe.",
+      "motion": "jelly", "fx": "hearts",
+      "pal": { "d": "#3D8B37", "l": "#D4E88A", "b": "#A0622D", "e": "#2A2A1A", "p": "#FFA8A0" },
+      "holes": "ep",
+      "art": [
+        "...ddd...",
+        "..dllld..",
+        ".dllllld.",
+        ".dleleld.",
+        "dlplllpld",
+        "dllbbblld",
+        "dlbbbbbld",
+        "dlbbbbbld",
+        ".dlbbbld.",
+        "..ddddd.."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "id": "pets",
+  "name": "Pet Shop",
+  "tagline": "Furry friends looking for a home",
+  "mode": "mono",
+  "color": "#FF9F43",
+  "figures": [
+    {
+      "id": "kitten", "name": "Kitten", "blurb": "Sits in any box. Knocks over any cup. Purrs anyway.",
+      "motion": "wiggle", "fx": "hearts",
+      "pal": {"e": "#2B2233", "h": "#FFFFFF", "p": "#FF9FB0", "b": "#FFB25B", "d": "#E0803A", "n": "#FF7FA0"},
+      "holes": "deh",
+      "art": [
+        "b.....b...",
+        "bb...bb...",
+        "bbbbbbb...",
+        "bhbbbhb...",
+        "bebnbeb...",
+        "pbbbbbp..b",
+        ".bbbbb...b",
+        "bbdbdbb.bb",
+        "bbdbdbbbb.",
+        ".bb.bb...."
+      ]
+    },
+    {
+      "id": "tortoise", "name": "Tortoise", "blurb": "Slow and steady. Mostly slow. Very steady.",
+      "motion": "march", "fx": "leaves",
+      "pal": {"e": "#2B2233", "h": "#FFFFFF", "p": "#FF9FB0", "s": "#B8783A", "d": "#E8B070", "r": "#7A4A2A", "g": "#8ED45A"},
+      "holes": "dhe",
+      "art": [
+        ".......ggg",
+        "..ssss.ghg",
+        ".ssdsssgeg",
+        "sdssdssggp",
+        "ssdssdsgg.",
+        "sdssdssdg.",
+        "ssssssss..",
+        "rrrrrrrrr.",
+        ".gg...gg..",
+        ".gg...gg.."
+      ]
+    },
+    {
+      "id": "cat-box", "name": "Cat in a Box", "blurb": "If it fits, it sits. If it does not fit, it sits harder.",
+      "motion": "wiggle", "fx": "sparkles",
+      "pal": {"e": "#2B2233", "h": "#FFFFFF", "p": "#FF9FB0", "o": "#5A5A6A", "g": "#B8B4C8", "n": "#FF7FA0", "k": "#8A5A2A", "c": "#D9A066"},
+      "holes": "gc",
+      "art": [
+        "..o....o..",
+        "..oo..oo..",
+        "..oggggo..",
+        ".oghgghgo.",
+        ".ogeggego.",
+        "kopgnngpok",
+        "kkkkkkkkkk",
+        ".kcccccck.",
+        ".kcccccck.",
+        ".kkkkkkkk."
+      ]
+    },
+    {
+      "id": "bunny", "name": "Bunny", "blurb": "Hops for carrots, flops for naps.",
+      "motion": "hop", "fx": "hearts",
+      "pal": {"e": "#2B2233", "h": "#FFFFFF", "p": "#FF9FB0", "o": "#8A7A9A", "w": "#F4ECF7", "i": "#FFB0C8", "n": "#FF7FA0"},
+      "holes": "wh",
+      "art": [
+        ".oo....oo.",
+        "owio..oiwo",
+        "owio..oiwo",
+        ".owoooowo.",
+        ".owwwwwwo.",
+        "owhwwwwhwo",
+        "owewnnwewo",
+        "opwwwwwwpo",
+        ".owwwwwwo.",
+        "..oooooo.."
+      ]
+    },
+    {
+      "id": "parrot", "name": "Parrot", "blurb": "Knows three words and uses all of them at dinner.",
+      "motion": "flap", "fx": "notes",
+      "pal": {"e": "#2B2233", "h": "#FFFFFF", "p": "#FF9FB0", "o": "#2E7A3A", "g": "#6CCB5F", "r": "#F0434F", "y": "#FFB23D", "k": "#8A5A3A"},
+      "holes": "gh",
+      "art": [
+        "..oooo....",
+        ".oggggoo..",
+        ".ogghegyy.",
+        "ogpgeegyyy",
+        "oggggoo.y.",
+        "oggrrgo...",
+        ".ogrrgo...",
+        "kkkykykkkk",
+        "..orrro...",
+        "...oro...."
+      ]
+    },
+    {
+      "id": "guinea-pig", "name": "Guinea Pig", "blurb": "Squeaks with joy whenever the fridge opens.",
+      "motion": "jelly", "fx": "hearts",
+      "pal": {"e": "#2B2233", "h": "#FFFFFF", "p": "#FF9FB0", "b": "#F2B880", "d": "#9A5A3A", "w": "#FFF6EA", "n": "#FF7FA0", "k": "#E8A0A0"},
+      "holes": "weh",
+      "art": [
+        "....dd....",
+        "..dddbbb..",
+        ".ddddbbbd.",
+        "dddbbbbbbb",
+        "ddwbbbbhbb",
+        "dwwwbbbebn",
+        "dwwwwbbbbp",
+        "ddwwbbbbbb",
+        ".dddbbbbb.",
+        "..kk...kk."
+      ]
+    },
+    {
+      "id": "gecko", "name": "Gecko", "blurb": "Sticks to walls, windows and your heart.",
+      "motion": "wiggle", "fx": "sparkles",
+      "pal": {"e": "#2B2233", "y": "#8ED45A", "d": "#5BB04A"},
+      "holes": "d",
+      "art": [
+        "...yyyy...",
+        "..yyyyyy..",
+        ".eyyyyyye.",
+        "..yyyyyy..",
+        "y...yy...y",
+        "yyyyyyyyyy",
+        "...ydyy...",
+        "...yydy...",
+        "yyyyyyyyyy",
+        "y...yy...y",
+        ".....yyyy."
+      ]
+    },
+    {
+      "id": "snake", "name": "Corn Snake", "blurb": "No legs, no problem. Gives the longest hugs.",
+      "motion": "wiggle", "fx": "hearts",
+      "pal": {"e": "#2B2233", "h": "#FFFFFF", "p": "#FF9FB0", "b": "#FF9F6B", "d": "#C0502A", "t": "#F0434F"},
+      "holes": "dh",
+      "art": [
+        "....bbbb..",
+        "...bbbhbb.",
+        "...bbbbebt",
+        "...bbpbbbt",
+        "...bbb....",
+        "....bbbbb.",
+        ".bb...dbbb",
+        "bbbb...bbb",
+        "bdbbbbbbd.",
+        "..bbdbbb.."
+      ]
+    },
+    {
+      "id": "puppy", "name": "Puppy", "blurb": "Will fetch anything. Brings it back. Maybe.",
+      "motion": "hop", "fx": "hearts",
+      "pal": {"e": "#2B2233", "h": "#FFFFFF", "p": "#FF9FB0", "o": "#8A5A3A", "b": "#F6D9A8", "d": "#A8703F", "n": "#3A2418", "m": "#5A3A2A", "t": "#FF7F9F"},
+      "holes": "bh",
+      "art": [
+        "..oooooo..",
+        ".obbbbbbo.",
+        "ddbbbbbbdd",
+        "ddbbbbbbdd",
+        "ddbhbbhbdd",
+        "ddbebbebdd",
+        "d.pbnnbp.d",
+        "..bbmtmb..",
+        "..obbbbo..",
+        "...oooo..."
+      ]
+    },
+    {
+      "id": "hamster", "name": "Hamster", "blurb": "Stores snacks in its cheeks for later. Later is now.",
+      "motion": "jelly", "fx": "sparkles",
+      "pal": {"e": "#2B2233", "h": "#FFFFFF", "p": "#FF9FB0", "o": "#B8642B", "b": "#FFB25B", "w": "#FFF1D6", "n": "#FF7FA0", "k": "#F08A7A"},
+      "holes": "bwh",
+      "art": [
+        ".oo....oo.",
+        "opoooooopo",
+        "obbbbbbbbo",
+        "obbbbbbbbo",
+        "obhbbbbhbo",
+        "obebbbbebo",
+        "opwwnnwwpo",
+        "owwwwwwwwo",
+        ".owkwwkwo.",
+        "..oooooo.."
+      ]
+    },
+    {
+      "id": "pug", "name": "Pug", "blurb": "Snores like a tractor. Loves like a teddy bear.",
+      "motion": "wiggle", "fx": "zzz",
+      "pal": {"e": "#2B2233", "h": "#FFFFFF", "p": "#FF9FB0", "o": "#8A6A4A", "b": "#F2D2A0", "k": "#3A2A2A", "t": "#FF7F9F"},
+      "holes": "bh",
+      "art": [
+        "kk......kk",
+        "kkkoooookk",
+        ".obbkkbbo.",
+        "obhebbhebo",
+        "obeebbeebo",
+        "obbbkkbbbo",
+        "opbkkkkbpo",
+        "obbbkkbbbo",
+        ".obkttkbo.",
+        "..oooooo.."
+      ]
+    },
+    {
+      "id": "chinchilla", "name": "Chinchilla", "blurb": "The fluffiest thing on earth. Takes dust baths to prove it.",
+      "motion": "hop", "fx": "sparkles",
+      "pal": {"e": "#2B2233", "h": "#FFFFFF", "p": "#FF9FB0", "o": "#6E6A80", "g": "#C8C4D8", "i": "#FFB0C8", "w": "#F4F2FA", "n": "#FF7FA0"},
+      "holes": "gwh",
+      "art": [
+        ".ooo..ooo.",
+        "oiiiooiiio",
+        "oiigoogiio",
+        ".oggggggo.",
+        "oghgggghgo",
+        "ogegnngego",
+        ".opgwwgpo.",
+        "..owwwwo..",
+        ".owwwwwwo.",
+        "..oooooo.."
+      ]
+    },
+    {
+      "id": "dachshund", "name": "Dachshund", "blurb": "Half a dog tall, two dogs long. All good boy.",
+      "motion": "march", "fx": "hearts",
+      "pal": {"e": "#2B2233", "h": "#FFFFFF", "b": "#C0743A", "d": "#7A4222", "n": "#2B2233", "r": "#F0434F"},
+      "holes": "eh",
+      "art": [
+        ".....bbb...",
+        "....bbbbb..",
+        "....bbhbbbb",
+        "b...dbebbbn",
+        ".b..ddbbbb.",
+        ".bbbddrr...",
+        "bbbbbbbbbb.",
+        "bbbbbbbbbb.",
+        ".bbbbbbbbb.",
+        ".bb....bb.."
+      ]
+    },
+    {
+      "id": "fishbowl", "name": "Goldfish Bowl", "blurb": "A tiny ocean with a very important resident.",
+      "motion": "bounce", "fx": "bubbles",
+      "pal": {"e": "#2B2233", "o": "#6AA8D0", "w": "#D6F0FF", "f": "#FF9F43", "g": "#5BC06C", "b": "#9AD4F5"},
+      "holes": "w",
+      "art": [
+        ".oooooooo.",
+        "..o....o..",
+        ".o....b.o.",
+        "owwwwwwwwo",
+        "owwffwwbwo",
+        "owfefwffwo",
+        "owwffffwwo",
+        "owwwwwwwgo",
+        ".oggwwwgo.",
+        "..oooooo.."
+      ]
+    },
+    {
+      "id": "pet-rock", "name": "Pet Rock", "blurb": "Low upkeep. Great at sitting. Secretly loves rock and roll.",
+      "motion": "roll", "fx": "notes",
+      "pal": {"e": "#2B2233", "h": "#FFFFFF", "p": "#FF9FB0", "o": "#6E6A80", "s": "#B8B4C8", "r": "#FF6F91"},
+      "holes": "she",
+      "art": [
+        ".....rr.rr",
+        "..oooorrr.",
+        ".osssrr.rr",
+        "osssssssso",
+        "oshsssshso",
+        "osesssseso",
+        "opsssssspo",
+        "osssssssso",
+        ".osssssso.",
+        "..ooooooo."
+      ]
+    },
+    {
+      "id": "budgie", "name": "Budgie", "blurb": "Chirps along to the radio. Always slightly off key.",
+      "motion": "hop", "fx": "notes",
+      "pal": {"e": "#2B2233", "h": "#FFFFFF", "p": "#FF9FB0", "o": "#3A7A9A", "y": "#FFE45C", "b": "#6ACDE8", "k": "#2E5A7A", "n": "#FF9F43"},
+      "holes": "ybh",
+      "art": [
+        "...oooo...",
+        "..oykkyo..",
+        ".oyyyyyyo.",
+        ".oyhyyhyo.",
+        ".oyeynyeo.",
+        ".opyyyypo.",
+        "okbbbbbbko",
+        "okkbbbbkko",
+        ".okkbbkko.",
+        "...oooo..."
+      ]
+    }
+  ]
+}

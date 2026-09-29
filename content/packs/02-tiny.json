@@ -1,0 +1,256 @@
+{
+  "id": "tiny",
+  "name": "Tiny Friends",
+  "tagline": "Bugs, sprouts and other small wonders",
+  "mode": "mono",
+  "color": "#7BC67B",
+  "figures": [
+    {
+      "id": "clover", "name": "Four-Leaf Clover", "blurb": "Found one? Lucky you. It was hoping to be found.",
+      "motion": "sway", "fx": "sparkles",
+      "pal": {"g": "#5BC06C", "l": "#A8E6A0", "d": "#3E8E4E"},
+      "holes": "l",
+      "art": [
+        ".gg.gg.",
+        "glggglg",
+        "ggg.ggg",
+        "...d...",
+        "gggdggg",
+        "glgdglg",
+        ".gg.gg."
+      ]
+    },
+    {
+      "id": "acorn", "name": "Acorn", "article": "an", "blurb": "Small nut, big plans. Wants to be an oak someday.",
+      "motion": "bounce", "fx": "leaves",
+      "pal": {"b": "#7A4A2A", "c": "#A8703F", "n": "#E8A95B", "e": "#3A2418", "p": "#FF8FA0"},
+      "holes": "e",
+      "art": [
+        "...b...",
+        ".ccccc.",
+        "ccccccc",
+        ".nnnnn.",
+        ".nenen.",
+        ".pnnnp.",
+        "..nnn.."
+      ]
+    },
+    {
+      "id": "chick", "name": "Chick", "blurb": "Hatched this morning. Already thinks it runs the farm.",
+      "motion": "hop", "fx": "hearts",
+      "pal": {"y": "#FFD84D", "o": "#FF9F43", "e": "#3A2A1A", "p": "#FF9FB0"},
+      "holes": "e",
+      "art": [
+        "..yy...",
+        ".yyyyy.",
+        "yyyyyyy",
+        "yeyyyey",
+        "ypyoypy",
+        ".yyyyy.",
+        "..o.o.."
+      ]
+    },
+    {
+      "id": "butterfly", "name": "Butterfly", "blurb": "Used to be a caterpillar. Does not like to talk about it.",
+      "motion": "flap", "fx": "petals",
+      "pal": {"p": "#FF8FC8", "w": "#FFE3F2", "k": "#4A3050"},
+      "holes": "w",
+      "art": [
+        "..k..k..",
+        "pp.kk.pp",
+        "pwpkkpwp",
+        "pppkkppp",
+        ".ppkkpp.",
+        "pp.kk.pp",
+        "ppp..ppp"
+      ]
+    },
+    {
+      "id": "frog", "name": "Frog", "blurb": "Sings all night by the pond. Takes requests.",
+      "motion": "hop", "fx": "notes",
+      "pal": {"g": "#6CCB5F", "e": "#2B2233", "p": "#FF9FB0", "m": "#2E7A3A"},
+      "holes": "em",
+      "art": [
+        ".gg..gg.",
+        "geggggeg",
+        "gggggggg",
+        "gpggggpg",
+        "ggmmmmgg",
+        ".gggggg.",
+        "gg....gg"
+      ]
+    },
+    {
+      "id": "ant", "name": "Ant", "article": "an", "blurb": "Carries fifty times its weight. Still asks for help.",
+      "motion": "march", "fx": "sparkles",
+      "pal": {"a": "#E0604A", "e": "#2B2233", "k": "#8A3A2A"},
+      "holes": "e",
+      "art": [
+        ".......k",
+        "......k.",
+        ".aa..aaa",
+        "aaaa.aea",
+        "aaaaaaaa",
+        ".aa..aa.",
+        "k.kk.k.k"
+      ]
+    },
+    {
+      "id": "spider", "name": "Baby Spider", "blurb": "Spins tiny webs, catches tiny hugs.",
+      "motion": "float", "fx": "sparkles",
+      "pal": {"s": "#C8C0D8", "k": "#5A4A7A", "e": "#FFFFFF", "p": "#FF9FB0"},
+      "holes": "e",
+      "art": [
+        "...s...",
+        "...s...",
+        "k.kkk.k",
+        ".kkkkk.",
+        "kkekekk",
+        ".kpkpk.",
+        "k.kkk.k",
+        ".k...k."
+      ]
+    },
+    {
+      "id": "tadpole", "name": "Tadpole", "blurb": "All head and tail for now. Legs are on back order.",
+      "motion": "swim", "fx": "bubbles",
+      "pal": {"t": "#6A7FA8", "e": "#FFFFFF", "p": "#FF9FB0"},
+      "holes": "e",
+      "art": [
+        ".ttt....",
+        "ttttt..t",
+        "tetet.tt",
+        "ttttttt.",
+        "tptpt...",
+        "ttttt...",
+        ".ttt...."
+      ]
+    },
+    {
+      "id": "snail", "name": "Snail", "blurb": "Never late. Just very, very early for tomorrow.",
+      "motion": "march", "fx": "sparkles",
+      "pal": {"o": "#E8A05B", "d": "#9A5A2A", "s": "#C8E6A0", "e": "#2B2233", "p": "#FF9FB0"},
+      "holes": "d",
+      "art": [
+        ".....e.e",
+        ".ooo.s.s",
+        "odddo.ss",
+        "ododo.ss",
+        "odooosps",
+        ".ooo.ss.",
+        "ssssssss"
+      ]
+    },
+    {
+      "id": "caterpillar", "name": "Caterpillar", "blurb": "Eats all week, naps in a cocoon, wakes up fancy.",
+      "motion": "march", "fx": "leaves",
+      "pal": {"a": "#8ED45A", "g": "#5BB04A", "l": "#B8E68A", "k": "#4A3050", "e": "#2B2233", "p": "#FF9FB0"},
+      "holes": "e",
+      "art": [
+        ".....k.k",
+        ".....aaa",
+        ".....aea",
+        ".lg.laap",
+        "llggllaa",
+        "llggllaa",
+        ".k..k..k"
+      ]
+    },
+    {
+      "id": "ladybug", "name": "Ladybug", "blurb": "Seven spots, zero worries. Lands on you for luck.",
+      "motion": "wiggle", "fx": "hearts",
+      "pal": {"k": "#2B2233", "e": "#FFFFFF", "r": "#F0434F", "d": "#2B2233"},
+      "holes": "ed",
+      "art": [
+        ".k....k.",
+        "..kkkk..",
+        ".kekkek.",
+        ".rrkkrr.",
+        "rdrrrrdr",
+        "rrrddrrr",
+        "rdrrrrdr",
+        ".rrrrrr."
+      ]
+    },
+    {
+      "id": "bee", "name": "Bee", "blurb": "Busy, buzzy and extremely proud of its stripes.",
+      "motion": "buzz", "fx": "sparkles",
+      "pal": {"k": "#2B2233", "y": "#FFCF3D", "w": "#CFE8FF", "e": "#2B2233", "p": "#FF9FB0"},
+      "holes": "e",
+      "art": [
+        "ww....ww",
+        "www..www",
+        ".wyyyyw.",
+        ".yeyyey.",
+        "yypyypyy",
+        "kkkkkkkk",
+        ".yyyyyy.",
+        "..kkkk.."
+      ]
+    },
+    {
+      "id": "dragonfly", "name": "Dragonfly", "blurb": "Four wings, zero brakes. Hovers like a tiny helicopter.",
+      "motion": "flap", "fx": "sparkles",
+      "pal": {"b": "#3FA9C9", "w": "#CFEFFF", "e": "#2B2233"},
+      "holes": "e",
+      "art": [
+        "..ebbe..",
+        "...bb...",
+        "wwwbbwww",
+        ".wwbbww.",
+        "wwwbbwww",
+        ".wwbbww.",
+        "...bb...",
+        "...bb..."
+      ]
+    },
+    {
+      "id": "sprout", "name": "Seedling", "blurb": "Just popped out of its seed. Reaching for the sun.",
+      "motion": "sway", "fx": "leaves",
+      "pal": {"g": "#6CCB5F", "b": "#C98A4A", "e": "#3A2418", "p": "#FF9FB0"},
+      "holes": "e",
+      "art": [
+        "gg....gg",
+        "ggg..ggg",
+        ".gggggg.",
+        "...gg...",
+        "..bbbb..",
+        ".bebbeb.",
+        ".bpbbpb.",
+        "..bbbb.."
+      ]
+    },
+    {
+      "id": "mouse", "name": "Mouse", "blurb": "Squeaks politely before stealing your cheese.",
+      "motion": "hop", "fx": "hearts",
+      "pal": {"g": "#B8B0C8", "p": "#FFB0C0", "e": "#2B2233", "n": "#FF7FA0"},
+      "holes": "e",
+      "art": [
+        ".gg..gg.",
+        "gppggppg",
+        "gppggppg",
+        ".gggggg.",
+        ".geggeg.",
+        ".gggggg.",
+        "..gnng..",
+        "...gg..."
+      ]
+    },
+    {
+      "id": "firefly", "name": "Firefly", "blurb": "Brings its own night light everywhere it goes.",
+      "motion": "glow", "fx": "sparkles",
+      "pal": {"k": "#4A3A6A", "e": "#FFFFFF", "w": "#CFE8FF", "y": "#FFE45C", "o": "#FFB23D"},
+      "holes": "e",
+      "art": [
+        ".k....k.",
+        "..kkkk..",
+        ".kekkek.",
+        "wwkkkkww",
+        "wwwkkwww",
+        ".wyyyyw.",
+        "..yooy..",
+        "...yy..."
+      ]
+    }
+  ]
+}

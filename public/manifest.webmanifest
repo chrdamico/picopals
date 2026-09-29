@@ -1,0 +1,18 @@
+{
+  "name": "Picopals",
+  "short_name": "Picopals",
+  "description": "Picture logic puzzles. Solve the grid and a cute pixel pal comes to life.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFF6EE",
+  "theme_color": "#FFF6EE",
+  "categories": ["games", "puzzle"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

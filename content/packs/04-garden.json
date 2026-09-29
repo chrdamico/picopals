@@ -1,0 +1,324 @@
+{
+  "id": "garden",
+  "name": "Garden Party",
+  "tagline": "Flowers, veggies and a gnome or two",
+  "mode": "mono",
+  "color": "#FF6FA5",
+  "figures": [
+    {
+      "id": "tulip", "name": "Tulip", "blurb": "Keeps her petals closed until someone says something nice.",
+      "motion": "sway", "fx": "petals",
+      "pal": {"k": "#C2457A", "r": "#FF8DB8", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF5E95", "m": "#8A2F52", "l": "#7ED67E", "g": "#4DB86A"},
+      "holes": "ehm",
+      "art": [
+        ".k..kk..k.",
+        ".kk.kk.kk.",
+        ".krkrrkrk.",
+        "krrrrrrrrk",
+        "krhrrrrhrk",
+        "krerrrrerk",
+        "kprrmmrrpk",
+        ".krrrrrrk.",
+        "..kkkkkk..",
+        "ll..gg..ll",
+        ".ll.gg.ll.",
+        "..llggll.."
+      ]
+    },
+    {
+      "id": "strawberry", "name": "Strawberry", "blurb": "Wears its seeds on the outside, like a true original.",
+      "motion": "bounce", "fx": "hearts",
+      "pal": {"k": "#C22F48", "r": "#FF5C6C", "y": "#FFE08A", "g": "#5BC06C", "d": "#3E8E4A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FFB3C6", "m": "#7A1F2F"},
+      "holes": "ehym",
+      "art": [
+        ".....d.....",
+        "..gggdggg..",
+        ".kgggggggk.",
+        "krrgrrrgrrk",
+        "kryrryrryrk",
+        "krhrrrrrhrk",
+        "krerrrrrerk",
+        "kpryrmryrpk",
+        ".krryryrrk.",
+        "..krryrrk..",
+        "...kkkkk..."
+      ]
+    },
+    {
+      "id": "eggplant", "name": "Eggplant", "blurb": "Purple, proud and very shiny. Moisturises daily.",
+      "motion": "jelly", "fx": "sparkles",
+      "pal": {"k": "#5A2A7A", "v": "#9A5AC8", "l": "#C9A0EA", "g": "#5BC06C", "d": "#3E8E4A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1", "m": "#3A1A4A"},
+      "holes": "ehml",
+      "art": [
+        "....dd....",
+        "...gddg...",
+        "..gggggg..",
+        "..gkvvkg..",
+        "...kvvk...",
+        "..kvlvvk..",
+        ".kvlvvvvk.",
+        "kvlhvvhvvk",
+        "kvvevvevvk",
+        "kvpvmmvpvk",
+        ".kvvvvvvk.",
+        "..kkkkkk.."
+      ]
+    },
+    {
+      "id": "wateringcan", "name": "Watering Can", "blurb": "Gives every flower a drink. Never asks for one back.",
+      "motion": "wiggle", "fx": "bubbles",
+      "pal": {"k": "#3A7BB8", "b": "#8FD3FF", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1", "m": "#1E3A5A"},
+      "holes": "eh",
+      "art": [
+        "..kkkk.....k",
+        ".k....k...kk",
+        ".k....k..kkk",
+        "kkkkkkkk.kk.",
+        "kbbbbbbkkk..",
+        "kbhbbhbbk...",
+        "kbebbebbk...",
+        "kpbmmbpbk...",
+        "kbbbbbbbk...",
+        ".kkkkkkk...."
+      ]
+    },
+    {
+      "id": "radish", "name": "Radish", "blurb": "Blushes easily. Also permanently.",
+      "motion": "bounce", "fx": "leaves",
+      "pal": {"k": "#B8284F", "r": "#FF5C7A", "w": "#FFF0F3", "e": "#2B2233", "h": "#FFFFFF", "p": "#FFA3BA", "m": "#7A1F35", "l": "#7ED67E", "g": "#3E9E55", "t": "#F0C8D4"},
+      "holes": "r",
+      "art": [
+        "ll..ll..ll",
+        "lll.ll.lll",
+        ".llggggll.",
+        "...gggg...",
+        "..kkkkkk..",
+        ".krrrrrrk.",
+        "krhrrrrhrk",
+        "krerrrrerk",
+        "krprmmrprk",
+        ".krrrrrrk.",
+        "..kkwwkk..",
+        "....tt...."
+      ]
+    },
+    {
+      "id": "carrot", "name": "Carrot", "blurb": "Great for your eyes. Terrible at hide and seek.",
+      "motion": "hop", "fx": "leaves",
+      "pal": {"k": "#C8631E", "o": "#FF9F43", "n": "#E07A2A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF7F9F", "m": "#7A3A1A", "g": "#5BC06C"},
+      "holes": "ehnm",
+      "art": [
+        ".g..gg..g.",
+        ".gg.gg.gg.",
+        "..gggggg..",
+        ".kkkkkkkk.",
+        "kooooooook",
+        "kohoooohok",
+        "koeooooeok",
+        ".kpommopk.",
+        "..knnook..",
+        "..koonnk..",
+        "...kook...",
+        "....kk...."
+      ]
+    },
+    {
+      "id": "cactus", "name": "Cactus", "blurb": "A little prickly at first. Then gives the best hugs. Carefully.",
+      "motion": "wiggle", "fx": "sparkles",
+      "pal": {"k": "#2E7D46", "g": "#6ACB6A", "f": "#FF8FB1", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1", "m": "#1E4D2B", "R": "#A8502F", "r": "#E8845A"},
+      "holes": "eh",
+      "art": [
+        ".....ff.....",
+        "....kffk....",
+        "...kggggk...",
+        "kk.kggggk.kk",
+        "kg.khgghk.gk",
+        "kg.keggek.gk",
+        "kggkpggpkggk",
+        ".kkkgmmgkkk.",
+        "...kggggk...",
+        "..RRRRRRRR..",
+        "...RrrrrR...",
+        "...RRRRRR..."
+      ]
+    },
+    {
+      "id": "broccoli", "name": "Broccoli", "blurb": "Looks like a tiny tree. Acts like a tiny tree. Is not a tree.",
+      "motion": "sway", "fx": "leaves",
+      "pal": {"k": "#2E7D46", "g": "#6ACB6A", "D": "#3E9E55", "d": "#6E9A3A", "l": "#C9E88A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1", "m": "#1E4D2B"},
+      "holes": "ehmD",
+      "art": [
+        "....kkkk....",
+        ".kkkggDgkkk.",
+        "kgDkggggkggk",
+        "kggggDggggDk",
+        "kgghgggghggk",
+        "kDgeggggeggk",
+        "kgpggmmggpDk",
+        ".kgggDggggk.",
+        "..kkdlldkk..",
+        "....dlld....",
+        "...dlllld...",
+        "..dddddddd.."
+      ]
+    },
+    {
+      "id": "birdhouse", "name": "Birdhouse", "blurb": "One room, great views, and a tenant who sings for rent.",
+      "motion": "bounce", "fx": "notes",
+      "pal": {"k": "#A8283A", "r": "#F2545B", "q": "#B87A3A", "w": "#FFD9A0", "o": "#5A3A2A", "y": "#FFD23F", "a": "#FF9F43", "e": "#2B2233"},
+      "holes": "wy",
+      "art": [
+        ".....kk.....",
+        "....krrk....",
+        "...krrrrk...",
+        "..krrrrrrk..",
+        ".krrrrrrrrk.",
+        "kkkkkkkkkkkk",
+        ".qwwwwwwwwq.",
+        ".qwwoooowwq.",
+        ".qwooyyoowq.",
+        ".qwoeyyeowq.",
+        ".qwoyaayowq.",
+        ".qqqqqqqqqq."
+      ]
+    },
+    {
+      "id": "wheelbarrow", "name": "Wheelbarrow", "blurb": "Carries the whole harvest home and never once asks for a break.",
+      "motion": "roll", "fx": "leaves",
+      "pal": {"k": "#A8283A", "r": "#F2545B", "o": "#FF9F43", "l": "#5BC06C", "t": "#FF5C5C", "d": "#7A4A2A", "c": "#5A4A5A", "w": "#B8B0C8"},
+      "holes": "w",
+      "art": [
+        "....o.l.l.tt",
+        "...oollllttt",
+        "kk.kkkkkkkkk",
+        "..kkrrrrrrrk",
+        "....krrrrrk.",
+        ".....kkkkk..",
+        ".....d.ccc..",
+        ".....dcwwwc.",
+        ".....dcwcwc.",
+        ".....dcwwwc.",
+        ".......ccc.."
+      ]
+    },
+    {
+      "id": "mushroomhouse", "name": "Mushroom House", "blurb": "Cosy inside, spotty outside. The neighbours are all frogs.",
+      "motion": "jelly", "fx": "sparkles",
+      "pal": {"k": "#A8283A", "r": "#F2545B", "w": "#FFFFFF", "q": "#B8864A", "s": "#FFF1D6", "b": "#8FD3FF", "d": "#9A5A3A", "y": "#FFD23F", "g": "#5BC06C"},
+      "holes": "wb",
+      "art": [
+        "....kkkk....",
+        "..kkrrrrkk..",
+        ".krwwrrrwwk.",
+        "krrwwrrrwwrk",
+        "krrrrrwwrrrk",
+        "kwwrrrwwrrwk",
+        ".kkkkkkkkkk.",
+        "..qssssssq..",
+        "..qbbsddsq..",
+        "..qbbsdysq..",
+        "..qsssddsq..",
+        "gggggggggggg"
+      ]
+    },
+    {
+      "id": "sunflower", "name": "Sunflower", "blurb": "Turns to face the sun all day. Very dedicated fan.",
+      "motion": "sway", "fx": "petals",
+      "pal": {"y": "#FFD23F", "B": "#7A4A22", "b": "#C98A4B", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1", "m": "#4A2A12", "g": "#5BC06C", "d": "#3E8E4A"},
+      "holes": "b",
+      "art": [
+        "...y.yy.y...",
+        ".yyyyyyyyyy.",
+        "yyyBBBBBByyy",
+        ".yBbhbbhbBy.",
+        "yyBbebbebByy",
+        ".yBpbmmbpBy.",
+        "yyBbbbbbbByy",
+        "yyyBBBBBByyy",
+        ".yyyyyyyyyy.",
+        "...y.yy.y...",
+        "..gg.dd.gg..",
+        "...ggddgg..."
+      ]
+    },
+    {
+      "id": "gnome", "name": "Garden Gnome", "blurb": "Guards the flowerbed day and night. Mostly by standing still.",
+      "motion": "march", "fx": "sparkles",
+      "pal": {"k": "#A8283A", "r": "#F2545B", "S": "#D9A07A", "s": "#FFD9B8", "n": "#FF9F8A", "W": "#B8B0C8", "w": "#FFFFFF", "b": "#4A8FE0", "d": "#7A4A2A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1"},
+      "holes": "sw",
+      "art": [
+        ".....kk.....",
+        "....krrk....",
+        "....krrk....",
+        "...krrrrk...",
+        "..krrrrrrk..",
+        ".kkkkkkkkkk.",
+        ".SshsssshsS.",
+        ".SpesnnsepS.",
+        "bWwwwnnwwwWb",
+        "bbWwwwwwwWbb",
+        ".bbWwwwwWbb.",
+        ".dd..WW..dd."
+      ]
+    },
+    {
+      "id": "flytrap", "name": "Venus Flytrap", "blurb": "Snaps at flies, then feels bad and waves sorry.",
+      "motion": "wiggle", "fx": "sparkles",
+      "pal": {"k": "#2E7D46", "g": "#7ED67E", "c": "#C9E88A", "w": "#FFFFFF", "m": "#FF7FA0", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1", "d": "#3E9E55", "l": "#6ACB6A", "R": "#B8583A"},
+      "holes": "gm",
+      "art": [
+        "c..c....c..c",
+        ".ckkkkkkkkc.",
+        ".kghgggghgk.",
+        "kggeggggeggk",
+        "kgpggggggpgk",
+        "kkwkwkkwkwkk",
+        ".kmmmmmmmmk.",
+        "..kwkwwkwk..",
+        "...kkkkkk...",
+        ".ll..dd..ll.",
+        "..RRRRRRRR..",
+        "...RRRRRR..."
+      ]
+    },
+    {
+      "id": "pumpkin", "name": "Pumpkin", "blurb": "Round, orange and ready for its big autumn debut.",
+      "motion": "bounce", "fx": "leaves",
+      "pal": {"k": "#C4541A", "o": "#FFA24A", "d": "#7A5A2A", "l": "#5BC06C", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF7F9F", "m": "#7A3A1A"},
+      "holes": "o",
+      "art": [
+        "......dd....",
+        ".....dd.ll..",
+        "..kkkkkkkk..",
+        ".kookookook.",
+        "kookooookook",
+        "kokohoohokok",
+        "kokoeooeokok",
+        "kokpommopkok",
+        "kokooooookok",
+        ".kokooookok.",
+        "..kkkkkkkk.."
+      ]
+    },
+    {
+      "id": "rose", "name": "Rose", "blurb": "Has thorns, but only uses them for dramatic effect.",
+      "motion": "sway", "fx": "petals",
+      "pal": {"k": "#B0243E", "r": "#FF5C77", "l": "#7ED67E", "d": "#3E9E55", "e": "#2B2233", "h": "#FFFFFF", "p": "#FFB3C6", "m": "#6A1A2A"},
+      "holes": "r",
+      "art": [
+        "...kkkkkk...",
+        "..krkkkkrk..",
+        ".krkrrrrkrk.",
+        ".krkrkkrkrk.",
+        "krrrkrrkrrrk",
+        "krhrrkkrrhrk",
+        "krerrrrrrerk",
+        ".kprrmmrrpk.",
+        "..kkkkkkkk..",
+        ".ll..dd..ll.",
+        "llll.dd.llll",
+        ".....dd....."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,327 @@
+{
+  "id": "sea",
+  "name": "Under the Sea",
+  "tagline": "Deep blue friends",
+  "mode": "mono",
+  "color": "#3FA7F5",
+  "figures": [
+    {
+      "id": "starfish", "name": "Starfish", "blurb": "Has five arms and still asks you for a hug.",
+      "motion": "spin", "fx": "sparkles",
+      "pal": { "k": "#D9643A", "y": "#FFA864", "d": "#FFD39A", "m": "#9E3A2A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF7FA0" },
+      "holes": "eh",
+      "art": [
+        ".....kk.....",
+        "....kyyk....",
+        "....kydk....",
+        "kkkkyyyykkkk",
+        "kdyyyyyyyydk",
+        ".kyheyyheyk.",
+        "..keeyyeek..",
+        "..kpymmypk..",
+        ".kyyyyyyyyk.",
+        ".kdyykkyydk.",
+        "kyyyk..kyyyk",
+        "kkkk....kkkk"
+      ]
+    },
+    {
+      "id": "crab", "name": "Crab", "blurb": "Walks sideways, thinks forwards.",
+      "motion": "march", "fx": "bubbles",
+      "pal": { "k": "#B8322A", "r": "#FF6B5B", "l": "#FFA89C", "e": "#2B2233", "h": "#FFFFFF", "p": "#FFC2CC" },
+      "holes": "eh",
+      "art": [
+        "kk.k....k.kk",
+        "krkr....rkrk",
+        "krrr....rrrk",
+        "krrk....krrk",
+        ".kk......kk.",
+        "..kkkkkkkk..",
+        ".krrrrrrrrk.",
+        "krrherrherrk",
+        "krreerreerrk",
+        "krprrllrrprk",
+        ".krrrrrrrrk.",
+        "k.kkkkkkkk.k"
+      ]
+    },
+    {
+      "id": "octopus", "name": "Octopus", "blurb": "Eight arms, zero chill, endless hugs.",
+      "motion": "wiggle", "fx": "bubbles",
+      "pal": { "k": "#C94A5A", "o": "#FF8A8A", "d": "#FFC0C0", "m": "#9A2A3A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF5C8A" },
+      "holes": "eh",
+      "art": [
+        "...kkkkkk...",
+        "..koooodok..",
+        ".kooooooook.",
+        ".koooooodok.",
+        ".koheooheok.",
+        ".koeeooeeok.",
+        ".kpoommoopk.",
+        ".kooooooook.",
+        "kooooooooook",
+        "oo.oo..oo.oo",
+        "ok.ok..ko.ko",
+        "k..kk..kk..k"
+      ]
+    },
+    {
+      "id": "jellyfish", "name": "Jellyfish", "blurb": "Goes wherever the current says. Very chill about it.",
+      "motion": "float", "fx": "bubbles",
+      "pal": { "k": "#A45CC8", "j": "#E7B8FF", "l": "#F7E6FF", "t": "#C98AEB", "m": "#7A3A9A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1" },
+      "holes": "eh",
+      "art": [
+        "....kkkk....",
+        "..kkjjjjkk..",
+        ".kjlljjjjjk.",
+        ".kjljjjjjjk.",
+        "kjjhejjhejjk",
+        "kjjeejjeejjk",
+        "kjpjjmmjjpjk",
+        "kkkkkkkkkkkk",
+        "..t..tt..t..",
+        ".t...tt...t.",
+        ".t..t..t..t.",
+        "..t.t..t.t.."
+      ]
+    },
+    {
+      "id": "hermit-crab", "name": "Hermit Crab", "blurb": "Moves house every year. Always finds a cuter one.",
+      "motion": "march", "fx": "bubbles",
+      "pal": { "k": "#A0643A", "s": "#FFE0B8", "d": "#E0A070", "r": "#FF7A5C", "q": "#B8402A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FFC2CC" },
+      "holes": "sh",
+      "art": [
+        "....kkkkk...",
+        "...kssssdk..",
+        "..ksddddsdk.",
+        "..ksdsssdsk.",
+        "..ksdsdsdsk.",
+        "..ksdddsdsk.",
+        "...kkkkkkk..",
+        "qq.qqqqqq.qq",
+        "rrqherrheqrr",
+        "qqqeerreeqqq",
+        "..qprrrrpq..",
+        ".q.qqqqqq.q."
+      ]
+    },
+    {
+      "id": "narwhal", "name": "Narwhal", "blurb": "The unicorn of the sea. Knows it, too.",
+      "motion": "swim", "fx": "sparkles",
+      "pal": { "k": "#5A6BA8", "n": "#A7B8E8", "s": "#8395D2", "w": "#E6ECFF", "t": "#FFF1C2", "d": "#E0C27A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1" },
+      "holes": "ehw",
+      "art": [
+        "td..........",
+        ".td.........",
+        "..tdkkk.....",
+        ".kknnnnkk...",
+        "knnnsnnnnk.k",
+        "khennnsnnkkk",
+        "keennnnnnnk.",
+        "kpnnnsnnnnk.",
+        "kwwwwwwnnnk.",
+        ".kwwwwwwnk..",
+        "..kkkkkkk..."
+      ]
+    },
+    {
+      "id": "baby-shark", "name": "Baby Shark", "blurb": "All bark, no bite. Mostly asks for snacks.",
+      "motion": "swim", "fx": "bubbles",
+      "pal": { "k": "#56657E", "g": "#A3B1C6", "w": "#F2F5FA", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1" },
+      "holes": "ehw",
+      "art": [
+        ".....kk.....",
+        "....kgk.....",
+        "...kggk...kk",
+        "..kggggkkkgk",
+        ".kgggggggggk",
+        "kgheggggggk.",
+        "kgeegggggggk",
+        "kpwwwwwggkgk",
+        ".kwwwwwwkkgk",
+        "..kkkkkkk.kk",
+        ".....kgk....",
+        "......k....."
+      ]
+    },
+    {
+      "id": "squid", "name": "Squid", "blurb": "Squirts ink when startled, then says sorry.",
+      "motion": "float", "fx": "bubbles",
+      "pal": { "k": "#6C7BD0", "s": "#C9D4FF", "d": "#8F9EEA", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1" },
+      "holes": "eh",
+      "art": [
+        ".....kk.....",
+        "....kssk....",
+        "...kssssk...",
+        "..kssddssk..",
+        "kssssssssssk",
+        "kkksssssskkk",
+        "..khesshek..",
+        "..keesseek..",
+        "..kpsssspk..",
+        "..kssssssk..",
+        "..d.d..d.d..",
+        ".d..d..d..d."
+      ]
+    },
+    {
+      "id": "sea-otter", "name": "Sea Otter", "blurb": "Holds hands while napping so no friend drifts away.",
+      "motion": "float", "fx": "hearts",
+      "pal": { "k": "#5A3622", "c": "#D9B48A", "l": "#FFF1DC", "b": "#8A5A3A", "n": "#3A2418", "d": "#6E4630", "s": "#B8C8F0", "r": "#7F95D6", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FA8" },
+      "holes": "lhsb",
+      "art": [
+        "...kkkkkk...",
+        ".kkcccccckk.",
+        "kcccccccccck",
+        "kcchecchecck",
+        "kcceecceecck",
+        "kcpllnnllpck",
+        "kcllllllllck",
+        ".kcllllllck.",
+        ".kbbbbbbbbk.",
+        "kbdrsrsrsdbk",
+        "kbddssssddbk",
+        ".kbbrssrbbk.",
+        ".kbbbbbbbbk.",
+        "kk.kkkkkk.kk"
+      ]
+    },
+    {
+      "id": "anglerfish", "name": "Anglerfish", "blurb": "Brings its own night light to the deep end.",
+      "motion": "glow", "fx": "sparkles",
+      "pal": { "k": "#3A2E80", "b": "#6B5BD0", "y": "#FFE45C", "l": "#FFF6B0", "w": "#FFFFFF", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1" },
+      "holes": "eh",
+      "art": [
+        "..kkk.......",
+        ".yk..k......",
+        "yly..k......",
+        ".y...k......",
+        "...kkkkkk...",
+        "..kbbbbbbk.k",
+        ".kbhebbbhek.",
+        "kbbeebbbeekk",
+        "kpbbbbbbbpbk",
+        "kkwkwkwkwkkk",
+        ".kbbbbbbbk.k",
+        "..kkkkkkk..."
+      ]
+    },
+    {
+      "id": "pufferfish", "name": "Pufferfish", "blurb": "Puffs up when nervous. Is nervous most of the time.",
+      "motion": "bounce", "fx": "bubbles",
+      "pal": { "k": "#C98A1E", "y": "#FFD45C", "l": "#FFF2C2", "s": "#E59A2E", "f": "#FF9F6B", "m": "#E0507A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1" },
+      "holes": "ehl",
+      "art": [
+        "..s..ss..s..",
+        "...kkkkkk...",
+        "..kyyyyyyk..",
+        ".kyyyyyyyyk.",
+        "skyheyyheyks",
+        ".kyeeyyeeyk.",
+        "fkpyymmyypkf",
+        "ffyyymmyyyff",
+        "skllllllllks",
+        ".kllllllllk.",
+        "..kkkkkkkk..",
+        "..s..ss..s.."
+      ]
+    },
+    {
+      "id": "submarine", "name": "Submarine", "blurb": "Peeks at the fish through round windows. Very polite.",
+      "motion": "bounce", "fx": "bubbles",
+      "pal": { "k": "#C28A1E", "y": "#FFD23F", "w": "#9FD8FF", "g": "#8A94A6", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1" },
+      "holes": "eh",
+      "art": [
+        "......kkk.....",
+        "......k.......",
+        ".....kkkkk....",
+        ".....kyyyk....",
+        "...kkkkkkkkk..",
+        ".kkyyyyyyyyyk.",
+        "kyheyheyywwykg",
+        "kyeeyeeyywwykg",
+        "kpyyyyypyyyyk.",
+        ".kyyyyyyyyyyk.",
+        "..kkkkkkkkkk.."
+      ]
+    },
+    {
+      "id": "sea-turtle", "name": "Sea Turtle", "blurb": "Takes the scenic route. Always.",
+      "motion": "swim", "fx": "bubbles",
+      "pal": { "k": "#3E7E4E", "g": "#8FD6A0", "s": "#C8964E", "d": "#8A5E2A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1" },
+      "holes": "sgh",
+      "art": [
+        "....kkkkk.....",
+        "...kdsdsdk....",
+        "..kdsdsdsdkkk.",
+        ".kdsdddddskggk",
+        "kdsdsdsdskghek",
+        "kdsdsdsdskgeek",
+        "kkkkkkkkkkpggk",
+        ".kgggggggggkk.",
+        "kggk....kggk..",
+        "kkk......kkk.."
+      ]
+    },
+    {
+      "id": "dolphin", "name": "Dolphin", "blurb": "Laughs at its own jokes. They are pretty good.",
+      "motion": "swim", "fx": "bubbles",
+      "pal": { "k": "#2C93A8", "b": "#6FD3E6", "w": "#E0FAFF", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1" },
+      "holes": "ehw",
+      "art": [
+        "........kk....",
+        ".......kbk....",
+        "......kbbk..kk",
+        "...kkkbbbbkkbk",
+        "..kbbbbbbbbbk.",
+        ".kbbhebbbbbbk.",
+        "kkkbeebbbbbbbk",
+        "kbbpwwwwwbbkbk",
+        ".kkwwwwwwkk.kk",
+        "...kkkkkk....."
+      ]
+    },
+    {
+      "id": "seahorse", "name": "Seahorse", "blurb": "Curls its tail around a friend and never lets go.",
+      "motion": "float", "fx": "bubbles",
+      "pal": { "k": "#C8602A", "y": "#FFA05C", "l": "#FFD6A8", "f": "#FF7FA0", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF5C80" },
+      "holes": "eh",
+      "art": [
+        "...kykyk....",
+        "..kyyyyyk...",
+        "kkkyheyyyk..",
+        "kyyyeeyyyk..",
+        ".kkkypyyyk..",
+        "....kyyyyk..",
+        "...klyyyyfk.",
+        "..klyyyyyffk",
+        "..klyyyyyfk.",
+        "...klyyyyk..",
+        "....klyyk...",
+        ".kk.kyyk....",
+        ".kykyyk.....",
+        "..kkkk......"
+      ]
+    },
+    {
+      "id": "whale", "name": "Whale", "blurb": "The biggest softie in the whole ocean.",
+      "motion": "swim", "fx": "bubbles",
+      "pal": { "k": "#2F5FA8", "b": "#5B9BE8", "l": "#CFE6FF", "w": "#9FD8FF", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1" },
+      "holes": "bh",
+      "art": [
+        "......w..w..",
+        ".......ww...",
+        "kk.....w....",
+        "kbk..kkkkk..",
+        ".kbkkbbbbkk.",
+        ".kbbbbbbbbbk",
+        "..kbbbbbbbbk",
+        "..kbbbbbhebk",
+        "..kbbbbbeebk",
+        "..kllllllbpk",
+        "...kllllllk.",
+        "....kkkkkk.."
+      ]
+    }
+  ]
+}

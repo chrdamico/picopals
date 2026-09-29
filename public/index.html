@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Picopals</title>
+  <meta name="description" content="Picture logic puzzles. Solve the grid and a cute pixel pal comes to life.">
+  <meta name="theme-color" content="#FFF6EE" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16141F" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Picopals">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preload" href="fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    try {
+      var s = JSON.parse(localStorage.getItem('picopals:v1') || '{}').settings || {};
+      if (s.theme && s.theme !== 'auto') document.documentElement.dataset.theme = s.theme;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <div id="app" aria-live="polite"></div>
+  <div id="sheet-root"></div>
+  <div id="toast" role="status"></div>
+  <noscript>Picopals needs JavaScript to run.</noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

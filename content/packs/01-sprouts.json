@@ -1,0 +1,89 @@
+{
+  "id": "sprouts",
+  "name": "Sprouts",
+  "tagline": "Tiny 5×5 pictures to learn the ropes",
+  "mode": "mono",
+  "color": "#5BC06C",
+  "figures": [
+    {
+      "id": "heart", "name": "Heart", "blurb": "Small, red and absolutely full of love.",
+      "motion": "pulse", "fx": "hearts",
+      "pal": { "r": "#FF5C7A" },
+      "art": [".r.r.", "rrrrr", "rrrrr", ".rrr.", "..r.."]
+    },
+    {
+      "id": "sunny", "name": "Sun", "blurb": "Gets up early every day just to say hi.",
+      "motion": "glow", "fx": "sparkles",
+      "pal": { "y": "#FFC83D", "o": "#FF9F43" },
+      "art": ["y.y.y", ".ooo.", "yoooy", ".ooo.", "y.y.y"]
+    },
+    {
+      "id": "pine", "name": "Pine Tree", "blurb": "Grows one needle at a time. No rush.",
+      "motion": "sway", "fx": "leaves",
+      "pal": { "g": "#4DB86A", "b": "#9A6A4A" },
+      "art": ["..g..", ".ggg.", "ggggg", "..b..", "..b.."]
+    },
+    {
+      "id": "star", "name": "Star", "blurb": "A wish that decided to stay.",
+      "motion": "spin", "fx": "stars",
+      "pal": { "y": "#FFD23F", "e": "#5A3A1A" },
+      "holes": "e",
+      "art": ["..y..", ".yyy.", "yeyey", ".yyy.", ".y.y."]
+    },
+    {
+      "id": "shroom", "name": "Toadstool", "blurb": "Wears polka dots and makes it work.",
+      "motion": "jelly", "fx": "sparkles",
+      "pal": { "r": "#F2545B", "w": "#FFFFFF", "c": "#F6E3C2" },
+      "holes": "w",
+      "art": [".rrr.", "rwrrr", "rrrwr", "..c..", ".ccc."]
+    },
+    {
+      "id": "apple", "name": "Apple", "blurb": "Crunchy on the outside, sweet on the inside.",
+      "motion": "bounce", "fx": "sparkles",
+      "pal": { "r": "#F0434F", "g": "#5BC06C", "b": "#8A5A3A", "w": "#FFD1D5" },
+      "holes": "w",
+      "art": ["..bg.", ".rrr.", "rwrrr", "rrrrr", ".rrr."]
+    },
+    {
+      "id": "bunny", "name": "Bunny", "blurb": "Ears up, nose twitching, ready for carrots.",
+      "motion": "hop", "fx": "hearts",
+      "pal": { "w": "#F4ECF7", "e": "#3A2A3A" },
+      "holes": "e",
+      "art": [".w.w.", ".w.w.", "wwwww", "wewew", ".www."]
+    },
+    {
+      "id": "kitty", "name": "Kitten", "blurb": "Sits in any box. Especially yours.",
+      "motion": "wiggle", "fx": "hearts",
+      "pal": { "k": "#FFB25B", "e": "#3A2A2A", "p": "#FF7FA0" },
+      "holes": "e",
+      "art": ["k...k", "kkkkk", "kekek", "kkpkk", ".kkk."]
+    },
+    {
+      "id": "ghost", "name": "Ghost", "blurb": "Too shy to scare anyone. Says boo quietly.",
+      "motion": "float", "fx": "sparkles",
+      "pal": { "w": "#EDEBFF", "e": "#3B3563" },
+      "holes": "e",
+      "art": [".www.", "wewew", "wwwww", "wwwww", "w.w.w"]
+    },
+    {
+      "id": "moon", "name": "Moon", "blurb": "Works nights. Naps through every sunrise.",
+      "motion": "float", "fx": "zzz",
+      "pal": { "y": "#FFE27A", "e": "#6A5A2A" },
+      "holes": "e",
+      "art": ["..yyy", ".yy..", ".ye..", ".yy..", "..yyy"]
+    },
+    {
+      "id": "fish", "name": "Goldfish", "blurb": "Remembers everything. Forgets it right away.",
+      "motion": "swim", "fx": "bubbles",
+      "pal": { "o": "#FF9F43", "e": "#2B2233" },
+      "holes": "e",
+      "art": [".oo.o", "oeooo", "ooooo", ".oo.o", "..o.."]
+    },
+    {
+      "id": "house", "name": "Cottage", "blurb": "Two rooms, one chimney, endless cocoa.",
+      "motion": "bounce", "fx": "steam",
+      "pal": { "r": "#E8515E", "w": "#FFF1D6", "d": "#9A6A4A" },
+      "art": ["..r..", ".rrr.", "rrrrr", ".wdw.", ".wdw."]
+    }
+  ]
+}

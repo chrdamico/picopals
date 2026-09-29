@@ -1,0 +1,351 @@
+{
+  "id": "sweets",
+  "name": "Sweet Shop",
+  "tagline": "Snacks with smiles",
+  "mode": "mono",
+  "color": "#F78FB3",
+  "figures": [
+    {
+      "id": "cookie", "name": "Cookie", "blurb": "Chocolate chips on the inside, sweetness all the way through.",
+      "motion": "roll", "fx": "sparkles",
+      "pal": {"k": "#9A5A2A", "c": "#E8B070", "d": "#5A3A1A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1", "m": "#5A3A1A"},
+      "holes": "dehm",
+      "art": [
+        "....kkkkk....",
+        "..kkcccck....",
+        ".kcccdccck...",
+        ".kcccccccckk.",
+        "kccdcccccccck",
+        "kccccccccdcck",
+        "kccheccchecck",
+        "kcpeeccceepck",
+        "kccccmcmcccck",
+        "kcdcccmcccdck",
+        ".kccccccccck.",
+        "..kkccdcckk..",
+        "....kkkkk...."
+      ]
+    },
+    {
+      "id": "cocoa", "name": "Hot Cocoa", "blurb": "Warm hugs in a mug. The marshmallows are just along for the ride.",
+      "motion": "wiggle", "fx": "steam",
+      "pal": {"k": "#B8B0C8", "w": "#FFFFFF", "c": "#7A4A2A", "K": "#3A7BB8", "m": "#9FD8FF", "l": "#E0F4FF", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1", "M": "#1E3A5A"},
+      "holes": "ehMwpl",
+      "art": [
+        "...kkk.kkk....",
+        "..kwwwkwwwk...",
+        ".KcccccccccK..",
+        "KKKKKKKKKKKKK.",
+        "KmmmmmmmmmmKKK",
+        "KmmhemmmhemK.K",
+        "KmmeemmmeemK.K",
+        "KmpmmmMmmmpK.K",
+        "KmmmmmmmmmmKKK",
+        "KmllmmmmllmK..",
+        ".KmmmmmmmmK...",
+        "..KKKKKKKK...."
+      ]
+    },
+    {
+      "id": "onigiri", "name": "Onigiri", "blurb": "A rice ball in a seaweed sweater. Always ready for a picnic.",
+      "motion": "bounce", "fx": "sparkles",
+      "pal": {"k": "#9A94B0", "w": "#FFFFFF", "n": "#2E4A4A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1", "m": "#6A4A5A"},
+      "holes": "nehm",
+      "art": [
+        ".....kkk.....",
+        "....kwwwk....",
+        "...kwwwwwk...",
+        "...kwwwwwk...",
+        "..kwwwwwwwk..",
+        "..kwhewhewk..",
+        ".kwweeweewwk.",
+        ".kwpwwmwwpwk.",
+        "kwwwwwwwwwwwk",
+        "kwwwnnnnnwwwk",
+        "kwwwnnnnnwwwk",
+        "kwwwnnnnnwwwk",
+        ".kkknnnnnkkk."
+      ]
+    },
+    {
+      "id": "donut", "name": "Donut", "blurb": "Has a hole in the middle and still feels completely whole.",
+      "motion": "roll", "fx": "sparkles",
+      "pal": {"k": "#9A5A2A", "i": "#FF8DB8", "d": "#E8B070", "a": "#FFFFFF", "b": "#6FD3FF", "c": "#FFD23F", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF5E95", "m": "#8A2F52"},
+      "holes": "dabceh",
+      "art": [
+        "....kkkkkk....",
+        "..kkiiiiiikk..",
+        ".kiiaaiiiibik.",
+        ".kiiiiiiiibik.",
+        "kiciikkkkiiiik",
+        "kicik....kiaik",
+        "kiiik....kiaik",
+        "kiheikkkkiheik",
+        "kieeiiiiiieeik",
+        ".kpiiimmiiipk.",
+        ".kdiiddddiddk.",
+        "..kddddddddk..",
+        "....kkkkkk...."
+      ]
+    },
+    {
+      "id": "icecream", "name": "Ice Cream Cone", "blurb": "Mint on top, crunch below. Best enjoyed before it waves goodbye.",
+      "motion": "wiggle", "fx": "snow",
+      "pal": {"k": "#3FA07A", "m": "#A8EBCF", "C": "#B8803A", "c": "#F2C27A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1", "M": "#1E5A44"},
+      "holes": "ehMc",
+      "art": [
+        "....kkkk....",
+        "..kkmmmmkk..",
+        ".kmmmmmmmmk.",
+        "kmmmmmmmmmmk",
+        "kmmhemmhemmk",
+        "kmmeemmeemmk",
+        "kmpmmMMmmpmk",
+        "kmmmmmmmmmmk",
+        ".kkmkkkkmkk.",
+        "..CkccCcckC.",
+        "..CccCcCccC.",
+        "...CCcccCC..",
+        "...CcCcCcC..",
+        "....CcCcC...",
+        ".....CCC...."
+      ]
+    },
+    {
+      "id": "bao", "name": "Steamed Bun", "blurb": "Soft on the outside, warm on the inside. Gives the best cuddles.",
+      "motion": "jelly", "fx": "steam",
+      "pal": {"k": "#C9A070", "b": "#FFF3E0", "P": "#E0C498", "w": "#FFFFFF", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1", "m": "#8A5A3A"},
+      "holes": "Pehmpw",
+      "art": [
+        "......kkk......",
+        "....kkbPbkk....",
+        "..kkbPbPbPbkk..",
+        ".kbwPbbPbbPbbk.",
+        "kbwPbbbbbbbPbbk",
+        "kbbbbbbbbbbbbbk",
+        "kbbbhebbbhebbbk",
+        "kbbbeebbbeebbbk",
+        "kbbppbbmbbppbbk",
+        "kbbbbbbbbbbbbbk",
+        ".kbbbbbbbbbbbk.",
+        "..kkkkkkkkkkk.."
+      ]
+    },
+    {
+      "id": "cupcake", "name": "Cupcake", "blurb": "Small cake, big dreams. Wears its frosting like a crown.",
+      "motion": "jelly", "fx": "hearts",
+      "pal": {"F": "#D9578A", "f": "#FFC2DA", "l": "#FFE8F1", "r": "#F2545B", "g": "#5BC06C", "W": "#3A8FB8", "w": "#9FE0FF", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF6FA0", "m": "#8A2F52"},
+      "holes": "ehmlw",
+      "art": [
+        ".......gg....",
+        "......rg.....",
+        ".....rrr.....",
+        "...FFrrrFF...",
+        "..FfllffffF..",
+        ".FflfffffffF.",
+        "FffhefffheffF",
+        "FffeefffeeffF",
+        "FfpfffmfffpfF",
+        "FFFFFFFFFFFFF",
+        ".WwWwwWwwWwW.",
+        ".WwWwwWwwWwW.",
+        "..WWwwWwwWW..",
+        "..WWWWWWWWW.."
+      ]
+    },
+    {
+      "id": "gummy", "name": "Gummy Bear", "blurb": "Squishy, bouncy and slightly see-through. Hides nothing.",
+      "motion": "jelly", "fx": "sparkles",
+      "pal": {"k": "#B8283F", "g": "#FF6F7F", "w": "#FFC2CA", "n": "#8A1F30", "e": "#2B2233", "h": "#FFFFFF", "p": "#FFB3C6", "m": "#8A1F30"},
+      "holes": "ehmnwp",
+      "art": [
+        ".kkk.....kkk.",
+        "kgwgkkkkkgwgk",
+        "kgggggggggggk",
+        ".kgggggggggk.",
+        ".kgheggghegk.",
+        ".kgeegngeegk.",
+        ".kpggmmmggpk.",
+        "..kgggggggk..",
+        ".kgkgggggkgk.",
+        "kggkgwwwgkggk",
+        "kggkgwwwgkggk",
+        ".kkggwwwggkk.",
+        "..kgggggggk..",
+        ".kgggkkkgggk.",
+        ".kkkk...kkkk."
+      ]
+    },
+    {
+      "id": "pancakes", "name": "Pancake Stack", "blurb": "Three layers of fluff, one pat of butter, zero regrets.",
+      "motion": "bounce", "fx": "steam",
+      "pal": {"Y": "#E0A020", "y": "#FFE680", "k": "#B8703A", "s": "#A8551A", "o": "#F2C27A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1", "m": "#6A3A1A", "P": "#7A9AC0", "w": "#EAF4FF"},
+      "holes": "o",
+      "art": [
+        ".....YYYY.....",
+        ".....YyyY.....",
+        "..kkksssskkk..",
+        ".kssssssssssk.",
+        "kosoheooheosok",
+        "kosoeeooeeoook",
+        "koopoommoopook",
+        "kkkkkkkkkkkkkk",
+        "kooooooooosook",
+        "kkkkkkkkkkskkk",
+        "kooooooooooook",
+        ".kkkkkkkkkkkk.",
+        "PwwwwwwwwwwwwP",
+        ".PPPPPPPPPPPP."
+      ]
+    },
+    {
+      "id": "popsicle", "name": "Popsicle", "blurb": "Keeps its cool on the hottest days. Melts for you anyway.",
+      "motion": "bounce", "fx": "sparkles",
+      "pal": {"k": "#C2457A", "r": "#FF8DB8", "c": "#FFF0D8", "S": "#B88A4A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF5E95", "m": "#8A2F52"},
+      "holes": "cehm",
+      "art": [
+        "..kkkkkk....",
+        ".krrrrrrk...",
+        "krrrrrrrk...",
+        "krrrrrrrrkk.",
+        "krherrrrherk",
+        "kreerrrreerk",
+        "kprrrmmrrrpk",
+        "kccrrrrrrcck",
+        "kccccrrcccck",
+        "kcccccccccck",
+        "kcccccccccck",
+        ".kckkkkkkkk.",
+        "..k..SS.....",
+        ".....SS.....",
+        ".....SS....."
+      ]
+    },
+    {
+      "id": "sushi", "name": "Salmon Sushi", "blurb": "Salmon on a rice pillow. Takes naps between chopsticks.",
+      "motion": "bounce", "fx": "sparkles",
+      "pal": {"O": "#D9572A", "o": "#FF9F6A", "w": "#FFE3D0", "k": "#9A94B0", "r": "#FFFFFF", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1", "m": "#6A4A5A"},
+      "holes": "wr",
+      "art": [
+        "...OOOOOOOOO...",
+        ".OOooowooowoOO.",
+        "OoooowooowooooO",
+        "OooowooowooowoO",
+        ".kOOOOOOOOOOOk.",
+        "krrrrrrrrrrrrrk",
+        "krrrherrrherrrk",
+        "krrreerrreerrrk",
+        "krrrprrmrrprrrk",
+        "krrrrrrrrrrrrrk",
+        ".kkrrrrrrrrrkk.",
+        "..kkkkkkkkkkk.."
+      ]
+    },
+    {
+      "id": "boba", "name": "Boba Tea", "blurb": "Full of chewy pearls and good vibes. Sip slowly, it tickles.",
+      "motion": "wiggle", "fx": "bubbles",
+      "pal": {"s": "#FF6FA0", "k": "#8A6A5A", "l": "#E8F4FF", "t": "#E8C8A0", "b": "#3A2A2A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1", "m": "#6A3A2A"},
+      "holes": "t",
+      "art": [
+        ".......ss...",
+        ".......ss...",
+        "..kkkkkssk..",
+        ".klllllsslk.",
+        "kkkkkkkkkkkk",
+        ".kttttttttk.",
+        ".kthetthetk.",
+        ".kteetteetk.",
+        ".kpttmmttpk.",
+        ".kttttttttk.",
+        "..kttttttk..",
+        "..kbtbbtbk..",
+        "..ktbttbtk..",
+        "..kbbtbbtk..",
+        "...kkkkkk..."
+      ]
+    },
+    {
+      "id": "toast", "name": "Slice of Toast", "blurb": "Rises every morning. Gets buttered up. Stays humble.",
+      "motion": "bounce", "fx": "steam",
+      "pal": {"c": "#C98A4B", "b": "#FFE3B0", "Y": "#E0A020", "y": "#FFE680", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1", "m": "#7A4A2A"},
+      "holes": "b",
+      "art": [
+        "..ccccccccc..",
+        ".ccbbbbbbbcc.",
+        "ccbbbbbbbbbcc",
+        "cbbbbYYYbbbbc",
+        "cbbbbYyYbbbbc",
+        "ccbbbYYYbbbcc",
+        ".cbbbbbbbbbc.",
+        ".cbhebbbhebc.",
+        ".cbeebbbeebc.",
+        ".cbpbbmbbpbc.",
+        ".cbbbbbbbbbc.",
+        ".cbbbbbbbbbc.",
+        ".ccccccccccc."
+      ]
+    },
+    {
+      "id": "pudding", "name": "Pudding", "blurb": "Wobbles when nervous. Wobbles when happy. Mostly just wobbles.",
+      "motion": "jelly", "fx": "hearts",
+      "pal": {"g": "#5BC06C", "r": "#F2545B", "k": "#9A5A2A", "c": "#B86A2A", "y": "#FFE08A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF8FB1", "m": "#7A4A2A", "P": "#7A9AC0", "w": "#EAF4FF"},
+      "holes": "y",
+      "art": [
+        "........g.....",
+        "......rrg.....",
+        "....kkrrkk....",
+        "...kcccccck...",
+        "...kcccccck...",
+        "..kcyccyycyk..",
+        "..kcyycyyyyk..",
+        ".kyyheyyheyyk.",
+        ".kyyeeyyeeyyk.",
+        ".kypyymmyypyk.",
+        ".kkkkkkkkkkkk.",
+        "PwwwwwwwwwwwwP",
+        ".PPPPPPPPPPPP."
+      ]
+    },
+    {
+      "id": "cakeslice", "name": "Cake Slice", "blurb": "The best piece of the party. It knows, and it is very modest.",
+      "motion": "bounce", "fx": "confetti",
+      "pal": {"g": "#5BC06C", "r": "#F2545B", "K": "#C2708A", "w": "#FFF5F8", "j": "#FF8DB8", "y": "#FFE08A", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF6FA0", "m": "#8A2F52"},
+      "holes": "wy",
+      "art": [
+        "...........gg..",
+        "..........rrrr.",
+        "..........rrrr.",
+        ".........KKrrKK",
+        "......KKKKwwwwK",
+        "...KKKKwwwwwwwK",
+        "KKKKwwwwwwwwwwK",
+        "KwwwwwwwwwwwwwK",
+        "KjjjjjjjjjjjjjK",
+        "KyyyyyheyyheyyK",
+        "KyyyyyeeyyeeyyK",
+        "KyyyypyymmyypyK",
+        "KKKKKKKKKKKKKKK"
+      ]
+    },
+    {
+      "id": "candy", "name": "Wrapped Candy", "blurb": "Comes gift-wrapped every time. Loves being unwrapped even more.",
+      "motion": "wiggle", "fx": "sparkles",
+      "pal": {"k": "#C2457A", "r": "#FF8DB8", "w": "#FFFFFF", "Y": "#D99A20", "y": "#FFD86A", "l": "#FFF3C4", "e": "#2B2233", "h": "#FFFFFF", "p": "#FF5E95", "m": "#8A2F52"},
+      "holes": "rw",
+      "art": [
+        ".....kkkkk.....",
+        "Y...kkwwrkk...Y",
+        "YY.kkwrrrrkk.YY",
+        "YlYkrrrrrrrkYlY",
+        "YyYkrherherkYyY",
+        "YlYkreereerkYlY",
+        "YyYkprrrrrpkYyY",
+        "YlYkrrmrmrrkYlY",
+        "YyYkrrrmrrrkYyY",
+        "YY.kkrrrrrkk.YY",
+        "Y...kkrrrkk...Y",
+        ".....kkkkk....."
+      ]
+    }
+  ]
+}

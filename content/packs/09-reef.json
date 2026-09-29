@@ -1,0 +1,341 @@
+{
+  "id": "reef",
+  "name": "Rainbow Reef",
+  "tagline": "Colourful critters of the coral",
+  "mode": "color",
+  "color": "#22C3B5",
+  "figures": [
+    {
+      "id": "clownfish", "name": "Clownfish", "blurb": "Lives in a stinging anemone and calls it cosy.",
+      "motion": "swim", "fx": "bubbles",
+      "pal": { "k": "#2E2436", "o": "#FF8A2A", "w": "#FFFFFF", "p": "#FF9FB8", "e": "#2B2233", "h": "#FFFFFF" },
+      "holes": "ehw",
+      "art": [
+        ".....kkkk.....",
+        "....koooook...",
+        "..kkkkkkkkk.kk",
+        ".koowwooowwkok",
+        "kohewwooowwook",
+        "koeewwooowwook",
+        "kopowwooowwook",
+        "kooowwooowwook",
+        ".koowwooowwkok",
+        "..kkkkkkkkk.kk",
+        "...kook.kook..",
+        "....kk...kk..."
+      ]
+    },
+    {
+      "id": "blue-tang", "name": "Blue Tang", "blurb": "Just keeps swimming. Forgot where, but keeps going.",
+      "motion": "swim", "fx": "bubbles",
+      "pal": { "k": "#1B2A6B", "b": "#3A7BEA", "y": "#FFD23F", "p": "#FF9FC0", "e": "#2B2233", "h": "#FFFFFF" },
+      "holes": "eh",
+      "art": [
+        "..............",
+        ".....kk.......",
+        "..kkkbbkkk....",
+        ".kbbkkkbkkk..k",
+        "kbbbkbbbbbkkkk",
+        "kbhekbbbbbkbyk",
+        "kbeekkkbkkkkyk",
+        "kbpbbbbbbbbkkk",
+        ".kbbyybbbbk..k",
+        "..kkkbbkkk....",
+        ".....kk.......",
+        ".............."
+      ]
+    },
+    {
+      "id": "angelfish", "name": "Angelfish", "blurb": "Wears stripes to every party. Always the best dressed.",
+      "motion": "swim", "fx": "sparkles",
+      "pal": { "k": "#23306E", "y": "#FFD84A", "f": "#3FC8D0", "p": "#FF8FB8", "e": "#2B2233", "h": "#FFFFFF" },
+      "holes": "eh",
+      "art": [
+        ".......kkkk...",
+        "......kfffk...",
+        "....kkyffk....",
+        "...kykyykk....",
+        "..kyykyykk...k",
+        ".kyyykyykyk.kk",
+        "kyheykyykyykfk",
+        "kyeeykyykyykfk",
+        ".kypykyykyk.kk",
+        "..kyykyykk...k",
+        "...kykyykk....",
+        "....kkyffk....",
+        "......kfffk...",
+        ".......kkkk..."
+      ]
+    },
+    {
+      "id": "betta-fish", "name": "Betta Fish", "blurb": "Its tail is a ball gown. Every day is a gala.",
+      "motion": "swim", "fx": "sparkles",
+      "pal": { "k": "#3A2470", "b": "#6A7BFF", "r": "#FF3F7A", "l": "#FFB3D1", "e": "#2B2233", "h": "#FFFFFF" },
+      "holes": "eh",
+      "art": [
+        "......kk.....k",
+        ".....krrk...kk",
+        "....krrrk.kkrk",
+        "...kbbrrrklrrk",
+        ".kkbbbbbrrrrrk",
+        "kbhebbbbbrrrrk",
+        "kbeebbbbbrlllk",
+        ".kblbbbbrrrrrk",
+        "..kkbbbrkrrrrk",
+        "....krrk.klrrk",
+        ".....krrk.kkrk",
+        ".....krrk...kk",
+        ".....kkk.....k"
+      ]
+    },
+    {
+      "id": "seashell", "name": "Seashell", "blurb": "Hold it to your ear. It hums you a little sea song.",
+      "motion": "bounce", "fx": "sparkles",
+      "pal": { "k": "#C0506E", "r": "#FF8FA8", "y": "#FFE08A", "e": "#2B2233", "h": "#FFFFFF" },
+      "holes": "eh",
+      "art": [
+        "...kkkkkkkk...",
+        ".kkyyyrryyykk.",
+        "krryyyrryyyrrk",
+        "krrryyrryyrrrk",
+        "kyrryyrryyrryk",
+        "kyrrherrherryk",
+        "kyyreerreeryyk",
+        "kryyrykkyryyrk",
+        "kkryyryyryyrkk",
+        "..kkryyyyrkk..",
+        "....kyyyyk....",
+        "...kyyyyyyk...",
+        "....kkkkkk...."
+      ]
+    },
+    {
+      "id": "coral", "name": "Coral", "blurb": "Looks like a plant, is actually an animal, just rolls with it.",
+      "motion": "sway", "fx": "bubbles",
+      "pal": { "k": "#C23A5A", "c": "#FF7A8E", "l": "#FFD0D6", "s": "#F2D08A", "e": "#2B2233", "h": "#FFFFFF" },
+      "holes": "h",
+      "art": [
+        "......kk......",
+        ".kk..kllk.....",
+        "kllk.kcck..kk.",
+        "kcck.kcck.kllk",
+        "kcck.kcck.kcck",
+        "kccckcccckccck",
+        "kkcccccccccckk",
+        "..kcheccheck..",
+        "..kceecceeck..",
+        "..kclckkclck..",
+        "..kcccccccck..",
+        "..kkkkkkkkkk..",
+        ".ssssssssssss.",
+        "ssssssssssssss"
+      ]
+    },
+    {
+      "id": "sea-urchin", "name": "Sea Urchin", "blurb": "Spiky on the outside. A total softie on the inside.",
+      "motion": "wiggle", "fx": "sparkles",
+      "pal": { "k": "#4A2680", "u": "#9A5CE8", "l": "#D8B8FF", "p": "#FF8FC0", "e": "#2B2233", "h": "#FFFFFF" },
+      "holes": "eh",
+      "art": [
+        "....k..k....",
+        ".k..k..k..k.",
+        "..k.kkkk.k..",
+        "...kluuuk...",
+        "kkkuuuuuukkk",
+        "..kheuuhek..",
+        "..keeuueek..",
+        "kkkpukkupkkk",
+        "..kluuuulk..",
+        "..kkkkkkkk..",
+        ".kk.k..k.kk.",
+        "....k..k...."
+      ]
+    },
+    {
+      "id": "oyster", "name": "Oyster", "blurb": "Guards one perfect pearl and will not stop talking about it.",
+      "motion": "bounce", "fx": "sparkles",
+      "pal": { "k": "#5C4A9E", "s": "#B9A7F0", "i": "#FF9FC0", "w": "#FFFFFF", "e": "#2B2233", "h": "#FFFFFF" },
+      "holes": "ehw",
+      "art": [
+        ".......kkkkkk.",
+        "....kkkssssssk",
+        "...ksssiiikkk.",
+        "..ksssswww....",
+        ".ksskkkwwww...",
+        ".ksk...www....",
+        "kiiikkkiwwkkkk",
+        "kssssssssssssk",
+        "ksshesssshessk",
+        ".kseesssseesk.",
+        "..kisskkssik..",
+        "....kkkkkk...."
+      ]
+    },
+    {
+      "id": "treasure-chest", "name": "Treasure Chest", "blurb": "Full of gold, gems and one very confused crab.",
+      "motion": "bounce", "fx": "sparkles",
+      "pal": { "k": "#5A3420", "b": "#B87844", "y": "#FFCF3A", "g": "#3FD0C8", "p": "#FF8FB0", "e": "#2B2233", "h": "#FFFFFF" },
+      "holes": "eh",
+      "art": [
+        "....kkkkkk....",
+        "..kkbbbbbbkk..",
+        ".kbybbbbbbybk.",
+        ".yyyyygyyyyyy.",
+        "..yygyyyygyy..",
+        ".kkkkkkkkkkkk.",
+        ".kbybbbbbbybk.",
+        ".kbyhebbheybk.",
+        ".kbyeebbeeybk.",
+        ".kbypbyybpybk.",
+        ".kbybbyybbybk.",
+        ".kkkkkkkkkkkk.",
+        ".kk........kk."
+      ]
+    },
+    {
+      "id": "sea-bunny", "name": "Sea Bunny", "blurb": "A fluffy slug with bunny ears. Nature was being extra cute.",
+      "motion": "hop", "fx": "hearts",
+      "pal": { "k": "#D9B45A", "w": "#FFF8E0", "d": "#3A3040", "p": "#FF8FB0", "e": "#2B2233", "h": "#FFFFFF" },
+      "holes": "ehw",
+      "art": [
+        "..dd....dd..",
+        ".kwwk..kwwk.",
+        ".kwwk..kwwk.",
+        "..kwkkkkwk..",
+        ".kwwwwwwwwk.",
+        "kwdwwwwwwdwk",
+        "kwwhewwhewwk",
+        "kwweewweewwk",
+        "kwpwwddwwpwk",
+        "kwwdwwwwdwwk",
+        ".kwwwwwwwwk.",
+        "..kkkkkkkk.."
+      ]
+    },
+    {
+      "id": "lobster", "name": "Lobster", "blurb": "Waves both claws at everyone. Just being friendly.",
+      "motion": "march", "fx": "bubbles",
+      "pal": { "k": "#7A1A1A", "r": "#F0453A", "l": "#FFA47E", "e": "#2B2233", "h": "#FFFFFF" },
+      "holes": "eh",
+      "art": [
+        ".kk.......kk.",
+        "krrk.....krrk",
+        "kr.rk...kr.rk",
+        "krrrk...krrrk",
+        ".kkrk...krkk.",
+        "..kkkkkkkkk..",
+        "..kherrrhek..",
+        "..keerrreek..",
+        ".kklrrrrrlkk.",
+        "k.krrrrrrrk.k",
+        ".k.klllllk.k.",
+        "...krrrrrk...",
+        "....klllk....",
+        "..krrkrkrrk..",
+        "..kkk.k.kkk.."
+      ]
+    },
+    {
+      "id": "axolotl", "name": "Axolotl", "blurb": "Smiles all the time. Nobody knows what it is up to.",
+      "motion": "wiggle", "fx": "hearts",
+      "pal": { "k": "#C24E7E", "o": "#FFB6CF", "g": "#FF4F9A", "e": "#2B2233", "h": "#FFFFFF" },
+      "holes": "h",
+      "art": [
+        "g.g........g.g",
+        ".gg.kkkkkk.gg.",
+        "gggkooooookggg",
+        ".ggkooooookgg.",
+        "ggkoheooheokgg",
+        ".gkoeeooeeokg.",
+        "..kgoooooogk..",
+        "..koookkoook..",
+        "...kooooook...",
+        "....kooook....",
+        "...kkokkokk...",
+        "...k.kkkk.k..."
+      ]
+    },
+    {
+      "id": "manta-ray", "name": "Manta Ray", "blurb": "Glides like a kite. Has never once been tangled in a tree.",
+      "motion": "flap", "fx": "bubbles",
+      "pal": { "k": "#1C2660", "n": "#3D5AB8", "l": "#9FC3FF", "p": "#FF8FB8", "e": "#2B2233", "h": "#FFFFFF" },
+      "holes": "eh",
+      "art": [
+        "....k.....k....",
+        "....k.....k....",
+        "....kkkkkkk....",
+        "...knhennhek...",
+        ".kknneenneenkk.",
+        "knllnpnkknpllnk",
+        "klllnnnnnnnlllk",
+        ".kknlnnnnnlnkk.",
+        "...kknnnnnkk...",
+        ".....knnnk.....",
+        "......knk......",
+        ".......kk......",
+        "........kk....."
+      ]
+    },
+    {
+      "id": "boxfish", "name": "Boxfish", "blurb": "Shaped like a box, dotted like a dress, proud of both.",
+      "motion": "bounce", "fx": "bubbles",
+      "pal": { "k": "#B07A10", "y": "#FFD23F", "d": "#2A2A6A", "p": "#FF7FA8", "e": "#2B2233", "h": "#FFFFFF" },
+      "holes": "eh",
+      "art": [
+        "..............",
+        "..kkkkkkkk....",
+        ".kyyyyydydk...",
+        "kyyyyyyyyyk..k",
+        "kyheyyheyyk.kk",
+        "kyeeyyeeyydkyk",
+        "kypyppypyyykyk",
+        "kyyyyyyyyyk.kk",
+        "kyyyyyyyydk..k",
+        ".kydyydyyyk...",
+        "..kkkkkkkk....",
+        ".............."
+      ]
+    },
+    {
+      "id": "seal-pup", "name": "Seal Pup", "blurb": "All whiskers and big eyes. Begs for fish, gets fish.",
+      "motion": "wiggle", "fx": "hearts",
+      "pal": { "k": "#7F8FB0", "w": "#FFFFFF", "g": "#C4D2EC", "n": "#3A3048", "p": "#FF9FB8", "e": "#2B2233", "h": "#FFFFFF" },
+      "holes": "ehw",
+      "art": [
+        "....kkkkkk....",
+        "..kkwwwwwwkk..",
+        ".kwwwwwwwwwwk.",
+        ".kwwwwwwwwwwk.",
+        ".kwwhewwhewwk.",
+        ".kwweewweewwk.",
+        ".kwpwwnnwwpwk.",
+        "..kwwwwwwwwk..",
+        "..kwwggggwwk..",
+        ".kwwggggggwwk.",
+        "kkkkggggggkkkk",
+        "....kkkkkk...."
+      ]
+    },
+    {
+      "id": "sea-anemone", "name": "Sea Anemone", "blurb": "Waves hello with all of its arms at once.",
+      "motion": "sway", "fx": "bubbles",
+      "pal": { "k": "#5A2A8A", "t": "#6FD06A", "l": "#FF7FC0", "b": "#A865E0", "e": "#2B2233", "h": "#FFFFFF" },
+      "holes": "eh",
+      "art": [
+        "l..l..l..l..l",
+        "t..t..t..t..t",
+        ".t.t..t..t.t.",
+        ".t..t.t.t..t.",
+        "..ttttttttt..",
+        "..kbbbbbbbk..",
+        ".kbbbbbbbbbk.",
+        ".kbhebbbhebk.",
+        ".kbeebbbeebk.",
+        ".kblbbkbblbk.",
+        ".kbbbbbbbbbk.",
+        "kkbbbbbbbbbkk",
+        "kkkkkkkkkkkkk"
+      ]
+    }
+  ]
+}
