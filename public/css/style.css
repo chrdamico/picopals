@@ -539,3 +539,7 @@ h3.section .link { margin-left: auto; }
   .rv-rays, .rv-glow { left: 30%; top: 46%; }
   .rv-hmm { right: auto; width: 60%; top: 80%; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}

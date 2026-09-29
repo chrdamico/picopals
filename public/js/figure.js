@@ -356,10 +356,10 @@ export class FigureStage {
 
   resize() {
     const r = this.canvas.getBoundingClientRect();
-    const dpr = Math.min(2, window.devicePixelRatio || 1);
-    this.dpr = dpr;
     this.cw = Math.max(1, r.width);
     this.ch = Math.max(1, r.height);
+    const dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1, Math.sqrt(4.5e6 / (this.cw * this.ch))));
+    this.dpr = dpr;
     this.canvas.width = Math.round(this.cw * dpr);
     this.canvas.height = Math.round(this.ch * dpr);
     this.rect = r;

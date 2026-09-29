@@ -104,7 +104,8 @@ export function showReveal(o) {
     }
     stage.start();
   };
-  make(true, from || null);
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  make(!calm, from || null);
   const onResize = () => {
     if (!stage) return;
     const popped = root.classList.contains('popped');
