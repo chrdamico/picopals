@@ -4,10 +4,11 @@ A nonogram (picross) game for the phone. Every solved grid flips into colour, th
 
 ## Content
 
-- **Journey:** 15 themed worlds, 228 hand-drawn pals, from 5×5 tutorials to 20×20 showpieces. Two worlds are colour nonograms. Solve half of a world to open the next.
+- **Journey:** 29 themed worlds, 493 puzzles: 436 hand-drawn pals from 5×5 tutorials to 20×20 showpieces (5 colour worlds), plus the **Grand Gallery** of 7 mosaics, big pictures cut into 10×10 pieces. A world opens after 4 solves in the one before, or straight away by beating its challenge puzzle. Settings can open everything.
 - **Hatchery:** endless generated puzzles. Each one hatches a unique critter with a name, a blurb and a rarity (common to legendary).
 - **Daily:** one generated pal per day, the same for everyone, with a theme per weekday and a streak.
 - **Album:** every pal you met, animated again on tap.
+- **Saves never go backwards:** every write merges with what is stored, open tabs sync live, a second copy guards against old app versions, and Settings → Backup exports a code or file.
 - **Play aids:** mistake checking (can be turned off), auto-cross for finished lines, hints that name a solvable line, undo/redo, drag lock to a row or column, pinch zoom with sticky clues, a live preview, light/dark theme, sound and haptics.
 
 Every puzzle is solvable by line logic alone. When the clues of a picture do not pin it down, the build pre-reveals a few "given" cells (shown with a gold corner).

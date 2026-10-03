@@ -15,3 +15,17 @@
 - **Candy Colours** (color): Macaron Tower, Cotton Candy Sheep, Strawberry Cow, Gumball Machine, Mochi Trio, Rainbow Cat, Lollipop Bear, Llama Pinata, Unicorn Cake, Gingerbread House, Bubble Tea Cat, Ice Cream Sundae
 - **Storybook** (mono): Potion, Crown, Crystal Ball, Slime, Spellbook, Genie Lamp, Frog Prince, Castle, Wizard, Fairy, Knight, Yeti, Mermaid, Unicorn, Phoenix, Baby Dragon
 - **Big Hugs** (mono): Cat Loaf, Polar Bear, Capybara, Bunny Loaf, Panda, Alpaca, Sloth, Penguin Chick, Quokka, Shiba Inu, Koala, Red Panda
+- **Dino Park** (mono): Woolly Mammoth, Brachiosaurus, Plesiosaur, T-Rex, Dino Skeleton, Hatching Egg, Stegosaurus, Pterodactyl, Triceratops, Pachycephalosaurus, Dino Footprint, Parasaurolophus, Ammonite, Volcano, Spinosaurus, Ankylosaurus
+- **Spooky Night** (mono): Haunted House, Bat, Cauldron, Gargoyle, Raven, Vampire, Frankenstein, Mummy, Jack-o'-Lantern, Candy Corn, Tombstone, Candle, Witch Hat, Zombie, Sugar Skull, Little Reaper
+- **Jungle Gym** (mono): Rhino, Lemur, Orangutan, Monkey, Tiger Cub, Lion Cub, Gorilla, Armadillo, Elephant, Meerkat, Zebra, Baby Croc, Warthog, Giraffe, Hippo, Cheetah
+- **Bird Watch** (color): Robin, Toucan, Cardinal, Puffin, Dodo, Peacock, Cockatoo, Ostrich, Blue Jay, Bald Eagle, Flamingo, Kingfisher, Seagull, Hummingbird, Pelican, Swan
+- **Arctic Chill** (mono): Mitten, Bobble Hat, Sled, Igloo, Musk Ox, Lemming, Beluga, Ice Skate, Husky, Orca, Snow Leopard, Iceberg, Reindeer, Ermine, Arctic Fox, Walrus
+- **Music Box** (mono): Accordion, Piano, Trumpet, Xylophone, Jukebox, Music Note, Microphone, Violin, Lyre, Tambourine, Metronome, Gramophone, Maraca, Acoustic Guitar, Saxophone, Handbell
+- **Kitchen Crew** (mono): Microwave, Blender, Fridge, Coffee Machine, Chef Hat, Teapot, Salt Shaker, Rice Cooker, Cooking Pot, Cheese Grater, Frying Pan, Kettle, Stand Mixer, Toaster, Oven Mitt, Rolling Pin
+- **Butterfly Garden** (color): Monarch Butterfly, Hydrangea, Blue Morpho, Swallowtail, Cherry Blossom, Water Lily, Hibiscus, Morning Glory, Bluebell, Luna Moth, Daisy, Poppy, Iris, Daffodil, Orchid, Pansy
+- **Pirate Cove** (mono): Cannon, Note in a Bottle, Lantern, Spyglass, Compass, Jolly Roger, Brass Bell, Doubloon, Barrel, Treasure Map, Pirate Cat, Desert Island, Rowboat, Ship's Wheel, Pirate Captain, Pirate Ship
+- **Tiny Town** (mono): Traffic Cone, Fire Hydrant, Traffic Light, Taxi, Stop Sign, Post Box, Bus, Hot Dog Stand, Street Lamp, Fire Truck, Ice Cream Van, Cafe, Garbage Truck, Clock Tower, Helicopter, Ferris Wheel
+- **Snack Attack** (color): Fries, Pretzel, Sushi Roll, Cheese Wedge, Taco, Pizza Slice, Hot Dog, Omelette, Popcorn Bucket, Burger, Bag of Chips, Drumstick, Sandwich, Spaghetti, Bento Box, Ramen Bowl
+- **Sports Day** (mono): Boxing Glove, Basketball, Golf Ball, Trophy, Surfboard, Tennis Racket, Soccer Ball, Shuttlecock, Archery Target, Medal, Whistle, Ping Pong Paddle, Kettlebell, Stopwatch, Bowling Pin, Roller Skate
+- **Kawaii Japan** (mono): Teru Teru Bozu, Paper Lantern, Torii Gate, Daruma, Kokeshi Doll, Origami Crane, Paper Fan, Taiyaki, Carp Streamer, Wind Chime, Sumo Wrestler, Kitsune Mask, Tanuki, Maneki-neko, Bonsai, Sakura Tree
+- **Grand Gallery** (mosaic): Lighthouse, Whale Lullaby, Treehouse, Snow Globe, Teapot House, Bunny Picnic, Dragon Hoard
