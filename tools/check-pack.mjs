@@ -2,7 +2,7 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { basename, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { loadPack, checkPack, analyzeFigure } from './packlib.mjs';
+import { loadPack, checkPack, analyzeFigure, tilesOf } from './packlib.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const args = process.argv.slice(2);
@@ -22,8 +22,36 @@ for (const path of args) {
     continue;
   }
   const report = [];
-  console.log('  #  id                    size   col fill  givens  rounds score');
-  pack.figures.forEach((fig, i) => {
+  if (!pack.mosaic) console.log('  #  id                    size   col fill  givens  rounds score');
+  if (pack.mosaic) {
+    const tile = pack.tile || 10;
+    console.log('  #  mosaic                size   tiles  fill(min-max)  givens  rounds(min-max)');
+    pack.figures.forEach((fig, i) => {
+      const ts = tilesOf(fig, tile).map((t) => ({ t, a: analyzeFigure(t, pack.mode) }));
+      const fills = ts.map((x) => x.a.fill);
+      const rounds = ts.map((x) => x.a.rounds);
+      const giv = ts.reduce((s2, x) => s2 + x.a.givens.length, 0);
+      const flags = [];
+      if (ts.some((x) => x.a.givenPct > 0.04)) flags.push('MANY-GIVENS ' + ts.filter((x) => x.a.givenPct > 0.04).map((x) => x.t.id).join(','));
+      if (ts.some((x) => x.a.fill < 0.2)) flags.push('SPARSE ' + ts.filter((x) => x.a.fill < 0.2).map((x) => x.t.id).join(','));
+      if (ts.some((x) => x.a.fill > 0.8)) flags.push('DENSE ' + ts.filter((x) => x.a.fill > 0.8).map((x) => x.t.id).join(','));
+      console.log(`  ${String(i + 1).padStart(2)} ${fig.id.padEnd(21)} ${`${fig.art[0].length}x${fig.art.length}`.padEnd(6)} ${String(ts.length).padStart(5)}  ${Math.min(...fills).toFixed(2)}-${Math.max(...fills).toFixed(2)}     ${String(giv).padStart(6)}  ${Math.min(...rounds)}-${Math.max(...rounds)} ${flags.join(' ')}`);
+      const w = fig.art[0].length;
+      const sol = new Array(w * fig.art.length).fill(0);
+      const givens = [];
+      let chars = [];
+      for (const { t, a } of ts) {
+        chars = a.chars;
+        a.sol.forEach((v, k) => {
+          const x = t.tx * tile + (k % tile);
+          const y = t.ty * tile + Math.floor(k / tile);
+          sol[y * w + x] = v;
+        });
+        for (const g of a.givens) givens.push((t.ty * tile + Math.floor(g / tile)) * w + t.tx * tile + (g % tile));
+      }
+      report.push({ i: i + 1, id: fig.id, name: fig.name, art: fig.art, pal: fig.pal, holes: fig.holes || '', w, h: fig.art.length, sol, givens, chars, mode: pack.mode, tile });
+    });
+  } else pack.figures.forEach((fig, i) => {
     const a = analyzeFigure(fig, pack.mode);
     const flags = [];
     if (a.givenPct > 0.04) flags.push('MANY-GIVENS');

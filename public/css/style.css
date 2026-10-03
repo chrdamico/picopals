@@ -543,3 +543,24 @@ h3.section .link { margin-left: auto; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
+
+.pips { display: flex; gap: 2px; margin-top: 3px; }
+.pips i { width: 5px; height: 5px; border-radius: 50%; background: var(--line); }
+.pips i.on { background: var(--wc, var(--ink-2)); }
+.lvl.done .pips { display: none; }
+.mosaics { display: grid; grid-template-columns: 1fr; gap: 14px; }
+@media (min-width: 480px) { .mosaics { grid-template-columns: 1fr 1fr; } }
+.mosaic-card { background: var(--surface); border-radius: 22px; padding: 12px; box-shadow: 0 1px 0 var(--line), 0 6px 20px var(--shadow); }
+.mosaic-map { position: relative; border-radius: 12px; overflow: hidden; }
+.mosaic-map canvas, .piece-map canvas { width: 100%; height: 100%; display: block; image-rendering: pixelated; }
+.mosaic-hit { position: absolute; inset: 0; display: grid; }
+.mosaic-hit button { border: 0; background: transparent; font-weight: 900; font-size: 20px; color: var(--ink-2); cursor: pointer; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink-2) 25%, transparent); }
+.mosaic-hit button.ok { box-shadow: none; cursor: pointer; }
+.mosaic-hit button.wip { color: var(--wc); }
+.mosaic-hit button:active { background: rgba(0, 0, 0, 0.06); }
+.mosaic-all { position: absolute; inset: 0; border: 0; background: transparent; cursor: pointer; }
+.mosaic-info { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 4px 0; }
+.mosaic-info small { color: var(--ink-2); font-weight: 800; }
+.piece-map { width: min(260px, 70vw); margin: 0 auto 12px; border-radius: 12px; overflow: hidden; }
+textarea.code { width: 100%; min-height: 110px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); font: 600 12px/1.4 ui-monospace, monospace; padding: 10px; resize: vertical; -webkit-user-select: text; user-select: text; }
+.file-pick { width: 100%; margin: 8px 0 4px; cursor: pointer; }

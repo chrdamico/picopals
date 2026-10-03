@@ -76,6 +76,19 @@ export function analyzeFigure(fig, mode) {
   };
 }
 
+export function tilesOf(fig, tile) {
+  const h = fig.art.length;
+  const w = fig.art[0].length;
+  const out = [];
+  for (let ty = 0; ty * tile < h; ty++) {
+    for (let tx = 0; tx * tile < w; tx++) {
+      const art = fig.art.slice(ty * tile, (ty + 1) * tile).map((r) => r.slice(tx * tile, (tx + 1) * tile));
+      out.push({ ...fig, id: `${fig.id}-${ty}${tx}`, art, tx, ty });
+    }
+  }
+  return out;
+}
+
 export function checkPack(pack) {
   const errors = [];
   const warnings = [];
@@ -83,10 +96,34 @@ export function checkPack(pack) {
   if (!['mono', 'color'].includes(mode)) errors.push(`pack: mode must be "mono" or "color"`);
   for (const k of ['id', 'name', 'tagline']) if (!pack[k]) errors.push(`pack: missing ${k}`);
   const ids = new Set();
+  const tile = pack.tile || 10;
+  if (pack.mosaic && ![5, 10, 15].includes(tile)) errors.push('pack: tile must be 5, 10 or 15');
   for (const fig of pack.figures || []) {
     if (ids.has(fig.id)) errors.push(`${fig.id}: duplicate id`);
     ids.add(fig.id);
-    validateFigure(fig, mode, errors, warnings);
+    if (!pack.mosaic) {
+      validateFigure(fig, mode, errors, warnings);
+      continue;
+    }
+    const n = errors.length;
+    const h = fig.art?.length || 0;
+    const w = fig.art?.[0]?.length || 0;
+    if (w % tile || h % tile) errors.push(`${fig.id}: mosaic size ${w}x${h} must be a multiple of ${tile}`);
+    if (w > 40 || h > 40) errors.push(`${fig.id}: mosaic size ${w}x${h} too big (max 40)`);
+    if (fig.blurb && fig.blurb.length > 90) warnings.push(`${fig.id}: blurb is ${fig.blurb.length} chars (max 90)`);
+    if (!fig.name || !fig.blurb) errors.push(`${fig.id}: needs name and blurb`);
+    if (errors.length > n) continue;
+    for (const t of tilesOf(fig, tile)) {
+      const e2 = [];
+      validateFigure({ ...t, name: fig.name, blurb: 'x' }, mode, e2, []);
+      if (e2.length) errors.push(...e2);
+      else {
+        const P = figurePuzzle(t, mode);
+        const f = P.sol.filter((v) => v > 0).length / P.sol.length;
+        if (f === 0) errors.push(`${t.id}: tile is empty`);
+        else if (f < 0.15) warnings.push(`${t.id}: tile fill ${f.toFixed(2)} is very low`);
+      }
+    }
   }
   return { errors, warnings };
 }

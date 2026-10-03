@@ -36,6 +36,25 @@ test('every journey level solves with line logic from its givens', () => {
   assert.ok(n >= 12);
 });
 
+test('mosaic tiles exist and match their big picture', () => {
+  const byId = new Map();
+  for (const w of WORLDS) for (const lv of w.levels) byId.set(lv.id, lv);
+  for (const w of WORLDS) {
+    for (const m of w.mosaics || []) {
+      assert.equal(m.tiles.length, (m.w / m.tile) * (m.h / m.tile), `${m.id} tile count`);
+      for (const id of m.tiles) {
+        const lv = byId.get(id);
+        assert.ok(lv, `${id} exists`);
+        assert.equal(lv.mosaic, m.id);
+        for (let y = 0; y < lv.h; y++) {
+          const row = m.art.slice((lv.ty * m.tile + y) * m.w + lv.tx * m.tile, (lv.ty * m.tile + y) * m.w + lv.tx * m.tile + lv.w);
+          assert.equal(lv.art.slice(y * lv.w, (y + 1) * lv.w), row, `${id} row ${y}`);
+        }
+      }
+    }
+  }
+});
+
 test('critter puzzles are line solvable for every size and style', () => {
   for (const size of [10, 15, 20]) {
     for (const mode of ['mono', 'color']) {

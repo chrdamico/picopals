@@ -1,14 +1,14 @@
-import { db, persist, resetAll } from './store.js';
+import { db, persist, resetAll, onExternalChange, exportCode, importCode } from './store.js';
 import { WORLDS } from './levels-data.js';
 import { Game } from './game.js';
 import { icon } from './icons.js';
 import { initPWA, isStandalone, isIOS, canPrompt, promptInstall } from './pwa.js';
 import { critterAsync } from './gen-client.js';
 import { dailyParams, dateKey, streak, lastDays, parseKey } from './daily.js';
-import { thumbURL, FigureStage } from './figure.js';
+import { thumbURL, FigureStage, figureCells } from './figure.js';
 import { showReveal, closeReveal, fmtTime, starsHtml } from './reveal.js';
 import { sfx } from './sound.js';
-import { article } from './puzzle.js';
+import { article, buildPuzzle } from './puzzle.js';
 import { RARITY } from './critters.js';
 
 const VERSION = '1.0.0';
@@ -60,6 +60,46 @@ WORLDS.forEach((w, wi) => {
   });
 });
 const TOTAL = serial;
+const MOSAICS = new Map();
+for (const w of WORLDS) for (const m of w.mosaics || []) {
+  m.world = w;
+  MOSAICS.set(m.id, m);
+}
+
+function mosaicDone(m) {
+  return m.tiles.filter((id) => db.done[id]).length;
+}
+
+function drawMosaic(cv, m, glow = null) {
+  const cells = figureCells(m);
+  const box = cv.getBoundingClientRect();
+  const dpr = Math.min(2, window.devicePixelRatio || 1);
+  const px = Math.max(1, Math.floor((box.width * dpr) / m.w));
+  cv.width = m.w * px;
+  cv.height = m.h * px;
+  const ctx = cv.getContext('2d');
+  const dark = document.documentElement.dataset.theme === 'dark' || (!document.documentElement.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+  const t = m.tile;
+  for (const id of m.tiles) {
+    const lv = LEVELS.get(id);
+    const solved = !!db.done[id];
+    for (let y = 0; y < t; y++) {
+      for (let x = 0; x < t; x++) {
+        const gx = lv.tx * t + x;
+        const gy = lv.ty * t + y;
+        const c = cells.col[gy * m.w + gx];
+        if (solved) ctx.fillStyle = c || (dark ? '#262335' : '#FFFFFF');
+        else ctx.fillStyle = (x + y) % 2 ? (dark ? '#2C2839' : '#EFE5DA') : dark ? '#302B3F' : '#F5ECE2';
+        ctx.fillRect(gx * px, gy * px, px, px);
+      }
+    }
+    if (glow === id) {
+      ctx.strokeStyle = '#FFB938';
+      ctx.lineWidth = Math.max(2, px * 0.6);
+      ctx.strokeRect(lv.tx * t * px + 1, lv.ty * t * px + 1, t * px - 2, t * px - 2);
+    }
+  }
+}
 
 const TIPS = [
   'Each number is a run of filled squares. A <b>5</b> in a row of 5 fills the whole row. <em>Tap or drag to fill.</em>',
@@ -228,16 +268,45 @@ function solvedIn(w) {
   return w.levels.filter((l) => db.done[l.id]).length;
 }
 
+const GATE = 4;
+
 function unlockNeed(w) {
-  return Math.ceil(w.levels.length / 2);
+  return Math.min(GATE, w.levels.length);
+}
+
+function openList() {
+  const solved = WORLDS.map(solvedIn);
+  let furthest = -1;
+  solved.forEach((n, i) => {
+    if (n > 0) furthest = i;
+  });
+  const out = [];
+  WORLDS.forEach((w, i) => {
+    out[i] = i === 0 || !!db.settings.unlockAll || i <= furthest || (out[i - 1] && solved[i - 1] >= unlockNeed(WORLDS[i - 1]));
+  });
+  return out;
 }
 
 function worldOpen(wi) {
-  if (wi === 0 || db.settings.unlockAll) return true;
-  const w = WORLDS[wi];
-  if (solvedIn(w) > 0) return true;
-  const prev = WORLDS[wi - 1];
-  return solvedIn(prev) >= unlockNeed(prev) && worldOpen(wi - 1);
+  return openList()[wi];
+}
+
+function gateLevel(w) {
+  if (w.mosaics) return LEVELS.get(w.mosaics[0].tiles[0]);
+  const sorted = [...w.levels].sort((a, b) => a.score - b.score);
+  return sorted[Math.floor(sorted.length / 2)];
+}
+
+const SCORES = [...LEVELS.values()].map((l) => l.score).sort((a, b) => a - b);
+const CUTS = [0.2, 0.4, 0.6, 0.8].map((q) => SCORES[Math.floor(q * (SCORES.length - 1))]);
+
+function difficulty(lv) {
+  return 1 + CUTS.filter((c) => lv.score > c).length;
+}
+
+function pips(lv) {
+  const d = difficulty(lv);
+  return `<span class="pips" aria-label="Difficulty ${d} of 5">${'<i class="on"></i>'.repeat(d)}${'<i></i>'.repeat(5 - d)}</span>`;
 }
 
 function nextLevel() {
@@ -337,7 +406,7 @@ function homeScreen() {
 }
 
 function thumbsRow(w, n = 5) {
-  const solved = w.levels.filter((l) => db.done[l.id]);
+  const solved = w.mosaics ? w.mosaics.filter((m) => mosaicDone(m) === m.tiles.length) : w.levels.filter((l) => db.done[l.id]);
   let out = '';
   for (let i = 0; i < n; i++) {
     const l = solved[i];
@@ -355,8 +424,8 @@ function journeyScreen() {
       const sizes = [...new Set(w.levels.map((l) => Math.max(l.w, l.h)))].sort((a, b) => a - b);
       const sz = sizes.length > 1 ? `${sizes[0]}×${sizes[0]} – ${sizes[sizes.length - 1]}×${sizes[sizes.length - 1]}` : `${sizes[0]}×${sizes[0]}`;
       const prev = WORLDS[wi - 1];
-      const lockMsg = !open && prev ? `Solve ${unlockNeed(prev) - solvedIn(prev)} more in ${esc(prev.name)}` : '';
-      return `<button class="world-card ${open ? '' : 'locked'}" ${open ? `data-go="world/${w.id}"` : 'disabled'} style="--wc:${w.color}">
+      const lockMsg = !open && prev ? (worldOpen(wi - 1) ? `Solve ${Math.max(1, unlockNeed(prev) - solvedIn(prev))} more in ${esc(prev.name)}, or jump ahead` : 'Locked · tap to jump ahead') : '';
+      return `<button class="world-card ${open ? '' : 'locked'}" ${open ? `data-go="world/${w.id}"` : `data-locked="${wi}"`} style="--wc:${w.color}">
         <span class="w-num">${open ? wi + 1 : icon('lock')}</span>
         <span class="w-body">
           <b>${esc(w.name)}${w.mode === 'color' ? ' <em class="col-badge">colour</em>' : ''}${n === w.levels.length ? ` <em class="done-badge">${icon('check', 'inline')}</em>` : ''}</b>
@@ -365,9 +434,26 @@ function journeyScreen() {
           <span class="w-thumbs">${open ? thumbsRow(w) : ''}<em>${sz}</em></span>
         </span>
       </button>`;
-    }).join('')}</div>`);
+    }).join('')}</div>
+    ${db.settings.unlockAll ? '' : '<p class="small muted center">Too easy? Tap a locked world and beat its challenge puzzle to jump straight there. Or open everything in Settings.</p>'}`);
   const cur = nextLevel();
   if (cur) el.querySelector(`[data-go="world/${cur.world.id}"]`)?.scrollIntoView({ block: 'center' });
+  el.querySelectorAll('[data-locked]').forEach((b) =>
+    b.addEventListener('click', () => {
+      sfx.tap();
+      const w = WORLDS[+b.dataset.locked];
+      const g = gateLevel(w);
+      sheet({
+        title: `Jump to ${esc(w.name)}?`,
+        html: `<p class="center">Beat its challenge puzzle (${g.w}×${g.h}${w.mode === 'color' ? ', colour' : ''}) and ${esc(w.name)} opens, with every world before it.</p>`,
+        actions: [
+          { label: 'Not now' },
+          { label: 'Try the challenge', primary: true, onClick: () => go(`play/${g.id}`) },
+          { label: 'Unlock all worlds', onClick: () => { db.settings.unlockAll = true; persist(true); rendered = null; route(); toast('All worlds are open'); } },
+        ],
+      });
+    }),
+  );
 }
 
 function levelTile(lv) {
@@ -380,7 +466,7 @@ function levelTile(lv) {
     </button>`;
   }
   return `<button class="lvl ${inProgress ? 'wip' : ''}" data-go="play/${lv.id}" aria-label="Puzzle ${lv.index + 1}">
-    <b>${lv.index + 1}</b><small>${lv.w}×${lv.h}</small>${inProgress ? '<span class="wip-dot"></span>' : ''}
+    <b>${lv.index + 1}</b><small>${lv.w}×${lv.h}</small>${pips(lv)}${inProgress ? '<span class="wip-dot"></span>' : ''}
   </button>`;
 }
 
@@ -396,7 +482,49 @@ function worldScreen(id) {
       <div class="w-meta"><span class="bar"><i style="width:${(n / w.levels.length) * 100}%"></i></span><span class="w-count">${n}/${w.levels.length}</span></div>
       ${nextW && need > 0 && !worldOpen(w.index + 1) ? `<p class="small muted">Solve ${need} more to open <b>${esc(nextW.name)}</b>.</p>` : ''}
     </div>
-    <div class="levels" style="--wc:${w.color}">${w.levels.map(levelTile).join('')}</div>`);
+    ${w.mosaics ? mosaicsHtml(w) : `<div class="levels" style="--wc:${w.color}">${w.levels.map(levelTile).join('')}</div>`}`);
+  if (w.mosaics) wireMosaics(app);
+}
+
+function mosaicsHtml(w) {
+  return `<div class="mosaics">${w.mosaics.map((m, i) => {
+    const n = mosaicDone(m);
+    const full = n === m.tiles.length;
+    const cols = m.w / m.tile;
+    return `<div class="mosaic-card ${full ? 'full' : ''}" style="--wc:${w.color}">
+      <div class="mosaic-map" data-m="${m.id}" style="aspect-ratio:${m.w}/${m.h}">
+        <canvas></canvas>
+        ${full ? `<button class="mosaic-all" data-pal="${m.id}" aria-label="${esc(m.name)}"></button>` : `<div class="mosaic-hit" style="grid-template-columns:repeat(${cols},1fr)">${m.tiles.map((id, k) => `<button data-go="play/${id}" class="${db.done[id] ? 'ok' : ''}${db.saves[`lv:${id}`] ? ' wip' : ''}" aria-label="Piece ${k + 1}">${db.done[id] ? '' : k + 1}</button>`).join('')}</div>`}
+      </div>
+      <div class="mosaic-info"><b>${full ? esc(m.name) : `Mosaic ${i + 1}`}</b><small>${full ? 'Complete' : `${n}/${m.tiles.length} pieces`}</small></div>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function wireMosaics(root) {
+  root.querySelectorAll('.mosaic-map').forEach((el) => drawMosaic(el.querySelector('canvas'), MOSAICS.get(el.dataset.m)));
+  root.querySelectorAll('[data-pal]').forEach((b) =>
+    b.addEventListener('click', () => {
+      sfx.tap();
+      const m = MOSAICS.get(b.dataset.pal);
+      palSheet(m, { tag: [m.world.name, `${m.w}×${m.h} mosaic`] });
+    }),
+  );
+}
+
+function pieceSheet(m, lv, res) {
+  const n = mosaicDone(m);
+  const next = m.tiles.find((id) => !db.done[id]);
+  const s = sheet({
+    title: `Piece ${n} of ${m.tiles.length}!`,
+    html: `<div class="piece-map" style="aspect-ratio:${m.w}/${m.h}"><canvas></canvas></div>
+      <p class="center">Solved in ${fmtTime(res.time)} ${starsHtml(res.stars)}. ${m.tiles.length - n} more to finish the picture.</p>`,
+    actions: [
+      { label: 'Mosaic', onClick: () => back(`world/${m.world.id}`) },
+      ...(next ? [{ label: 'Next piece', primary: true, onClick: () => go(`play/${next}`, true) }] : []),
+    ],
+  });
+  requestAnimationFrame(() => drawMosaic(s.querySelector('canvas'), m, lv.id));
 }
 
 function playScreenShell(title, parent, menu) {
@@ -461,11 +589,15 @@ function recordStats(res) {
 
 function playLevel(id) {
   const lv = LEVELS.get(id);
-  if (!lv || !worldOpen(lv.world.index)) return go('journey', true);
+  if (!lv) return go('journey', true);
+  const challenge = !worldOpen(lv.world.index);
+  if (challenge && gateLevel(lv.world) !== lv) return go('journey', true);
   const w = lv.world;
   db.last = { kind: 'level', id };
   persist();
-  const el = playScreenShell(`${esc(w.name)} <span>${lv.index + 1}/${w.levels.length}</span>`, `world/${w.id}`, () => gameMenu());
+  const m = lv.mosaic ? MOSAICS.get(lv.mosaic) : null;
+  const title = challenge ? `Challenge <span>${esc(w.name)}</span>` : m ? `${esc(w.name)} <span>piece ${m.tiles.indexOf(lv.id) + 1}/${m.tiles.length}</span>` : `${esc(w.name)} <span>${lv.index + 1}/${w.levels.length}</span>`;
+  const el = playScreenShell(title, challenge ? 'journey' : `world/${w.id}`, () => gameMenu());
   const firstColor = WORLDS.find((x) => x.mode === 'color');
   const tip = w.index === 0 && lv.index < TIPS.length ? TIPS[lv.index] : w === firstColor && lv.index < COLOR_TIPS.length ? COLOR_TIPS[lv.index] : '';
   const g = mountGame(el, {
@@ -481,7 +613,31 @@ function playLevel(id) {
       db.done[lv.id] = { t: best ? Math.round(res.time) : prev.t, stars: Math.max(res.stars, prev?.stars || 0), at: Date.now(), n: (prev?.n || 0) + 1 };
       recordStats(res);
       persist(true);
-      const unlocked = WORLDS.find((x, i) => !openBefore[i] && worldOpen(i));
+      const unlocked = challenge ? w : WORLDS.find((x, i) => !openBefore[i] && worldOpen(i));
+      if (m) {
+        solvedMsg(gm, `Solved in ${fmtTime(res.time)}`);
+        if (unlocked) setTimeout(() => toast(`New world unlocked: <b>${esc(unlocked.name)}</b>`), 900);
+        if (mosaicDone(m) < m.tiles.length) {
+          setTimeout(() => pieceSheet(m, lv, res), 500);
+          return;
+        }
+        if (prev) {
+          setTimeout(() => pieceSheet(m, lv, res), 500);
+          return;
+        }
+        const nextM = w.mosaics.find((x) => mosaicDone(x) < x.tiles.length);
+        showReveal({
+          fig: m,
+          puzzle: buildPuzzle(m, w.mode),
+          from: null,
+          color: w.color,
+          tag: [w.name, `${m.w}×${m.h} mosaic`],
+          stats: res,
+          note: 'Mosaic complete!',
+          actions: [nextM ? { label: 'Next mosaic', icon: 'play', primary: true, onClick: () => go(`play/${nextM.tiles.find((id) => !db.done[id])}`, true) } : { label: w.name, primary: true, onClick: () => back(`world/${w.id}`) }],
+        });
+        return;
+      }
       const nxt = w.levels.slice(lv.index + 1).find((l) => !db.done[l.id]) || w.levels.find((l) => !db.done[l.id]) || nextLevel();
       const actions = [];
       if (unlocked) actions.push({ label: `Open ${unlocked.name}`, primary: true, onClick: () => go(`world/${unlocked.id}`, true) });
@@ -767,6 +923,11 @@ function albumScreen(tab) {
     tab === 'journey'
       ? WORLDS.map((w, wi) => {
           const n = solvedIn(w);
+          if (w.mosaics) {
+            const full = w.mosaics.filter((m) => mosaicDone(m) === m.tiles.length).length;
+            return `<div class="album-world"><h3 class="section" style="--wc:${w.color}"><span class="dot"></span>${esc(w.name)} <small>${full}/${w.mosaics.length}</small></h3>
+            <div class="album-grid">${w.mosaics.map((m) => (mosaicDone(m) === m.tiles.length ? `<button class="al" data-mo="${m.id}"><img src="${thumbURL(m, 72)}" alt="${esc(m.name)}"></button>` : `<span class="al unk">${worldOpen(wi) ? `${mosaicDone(m)}/${m.tiles.length}` : icon('lock')}</span>`)).join('')}</div></div>`;
+          }
           return `<div class="album-world"><h3 class="section" style="--wc:${w.color}"><span class="dot"></span>${esc(w.name)} <small>${n}/${w.levels.length}</small></h3>
           <div class="album-grid">${w.levels.map((l) => (db.done[l.id] ? `<button class="al" data-lv="${l.id}"><img src="${thumbURL(l, 56)}" alt="${esc(l.name)}"></button>` : `<span class="al unk">${worldOpen(wi) ? '?' : icon('lock')}</span>`)).join('')}</div></div>`;
         }).join('')
@@ -791,6 +952,13 @@ function albumScreen(tab) {
       const lv = LEVELS.get(b.dataset.lv);
       const d = db.done[lv.id];
       palSheet(lv, { tag: [no(lv.no), lv.world.name], sub: `${starsHtml(d.stars)} Best ${fmtTime(d.t)}`, play: () => go(`play/${lv.id}`) });
+    }),
+  );
+  el.querySelectorAll('[data-mo]').forEach((b) =>
+    b.addEventListener('click', () => {
+      sfx.tap();
+      const m = MOSAICS.get(b.dataset.mo);
+      palSheet(m, { tag: [m.world.name, `${m.w}×${m.h} mosaic`] });
     }),
   );
   const counts = {};
@@ -887,6 +1055,15 @@ function settingsScreen() {
         <button class="btn danger" data-reset>Reset progress</button>
       </div>
     </div>
+    <div class="card">
+      <h3>Backup</h3>
+      <p>Progress lives in this browser. Windows and tabs share it safely, and nothing is ever overwritten with older progress. To move it to another device, or before clearing browser data, keep a backup code. Restoring only adds progress.</p>
+      <div class="row wrap">
+        <button class="btn" data-export>${icon('share')} Copy code</button>
+        <button class="btn" data-file>${icon('download')} Save file</button>
+        <button class="btn" data-import>${icon('refresh')} Restore</button>
+      </div>
+    </div>
     <p class="small muted center">Picopals ${VERSION} · works offline · no ads, no tracking</p>
   `);
   el.querySelectorAll('[data-set]').forEach((inp) =>
@@ -904,6 +1081,51 @@ function settingsScreen() {
     applyTheme();
     el.querySelectorAll('[data-seg="theme"] button').forEach((x) => x.classList.toggle('on', x === b));
   });
+  el.querySelector('[data-export]').addEventListener('click', async () => {
+    const code = exportCode();
+    try {
+      await navigator.clipboard.writeText(code);
+      toast('Backup code copied. Paste it somewhere safe.');
+    } catch {
+      sheet({ title: 'Backup code', html: `<textarea class="code" readonly>${esc(code)}</textarea><p class="small center">Select all and copy it somewhere safe.</p>`, actions: [{ label: 'Done', primary: true }] });
+    }
+  });
+  el.querySelector('[data-file]').addEventListener('click', () => {
+    const blob = new Blob([exportCode()], { type: 'text/plain' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `picopals-backup-${dateKey()}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => {
+      URL.revokeObjectURL(a.href);
+      a.remove();
+    }, 1000);
+  });
+  el.querySelector('[data-import]').addEventListener('click', () => {
+    const sh = sheet({
+      title: 'Restore progress',
+      html: `<textarea class="code" placeholder="Paste a backup code (PICOPALS1:…)"></textarea>
+        <label class="btn ghost file-pick">${icon('download')} Or choose a backup file<input type="file" accept=".txt,text/plain" hidden></label>
+        <p class="small center">Restoring merges the backup with what you have. Nothing gets lost.</p>`,
+      actions: [{ label: 'Cancel' }, { label: 'Restore', primary: true, keep: true, onClick: () => doImport(sh.querySelector('textarea').value) }],
+    });
+    sh.querySelector('input[type=file]').addEventListener('change', async (e) => {
+      const f = e.target.files?.[0];
+      if (f) doImport(await f.text());
+    });
+  });
+  function doImport(text) {
+    try {
+      importCode(text);
+      closeSheet();
+      toast('Progress restored');
+      rendered = null;
+      route();
+    } catch {
+      toast('That does not look like a Picopals backup');
+    }
+  }
   el.querySelector('[data-unlock]').addEventListener('click', () => {
     s.unlockAll = !s.unlockAll;
     persist();
@@ -920,6 +1142,13 @@ function settingsScreen() {
   });
 }
 
+onExternalChange(() => {
+  applyTheme();
+  if (!/^(play|hatch\/play|daily\/play)/.test(rendered || '') && !sheetClose) {
+    rendered = null;
+    route();
+  }
+});
 applyTheme();
 matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', applyTheme);
 if (isStandalone()) navigator.storage?.persist?.().catch(() => {});

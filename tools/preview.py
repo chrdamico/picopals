@@ -56,16 +56,27 @@ def draw_fig(fig):
                 r = max(2, ms // 3)
                 cx, cy = mx + x * ms + ms // 2, my + y * ms + ms // 2
                 d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(230, 40, 60))
+    t = fig.get("tile")
+    if t:
+        for k in range(t, w, t):
+            d.line([ox + k * ps - 1, oy, ox + k * ps - 1, oy + h * ps], fill=(255, 60, 120), width=2)
+            d.line([mx + k * ms, my, mx + k * ms, my + h * ms], fill=(255, 60, 120), width=2)
+        for k in range(t, h, t):
+            d.line([ox, oy + k * ps - 1, ox + w * ps, oy + k * ps - 1], fill=(255, 60, 120), width=2)
+            d.line([mx, my + k * ms, mx + w * ms, my + k * ms], fill=(255, 60, 120), width=2)
     label = f"#{fig['i']} {fig['name']}  {w}x{h}  givens {len(givens)}"
     d.text((10, 8), label, fill=(30, 30, 40), font=font(17))
     return tile
 
 
 def main():
+    global TILE_W, ART, MASK
     rep = json.load(open(sys.argv[1]))
     figs = rep["figures"]
+    if any(f.get("tile") for f in figs):
+        TILE_W, ART, MASK = 620, 300, 270
     tiles = [draw_fig(f) for f in figs]
-    cols = 3
+    cols = 2 if TILE_W > 500 else 3
     rows = (len(tiles) + cols - 1) // cols
     th = max(t.height for t in tiles) if tiles else 10
     sheet = Image.new("RGB", (cols * TILE_W, rows * th + 40), (255, 255, 255))

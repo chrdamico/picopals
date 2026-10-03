@@ -78,6 +78,17 @@ One JSON file per world in `content/packs/NN-id.json`:
   must read at a glance in colour. Recognisable beats detailed.
 - Use the whole canvas: the figure touches or nearly touches most edges; no big empty margins.
 
+## Colour packs: no white paint
+
+Empty cells in the game are drawn white (#FFFFFF, dark grey in dark mode). A white or near-white
+puzzle colour looks like an empty cell. Make white and very pale parts `holes` (they still show
+in the reveal), or use a clearly tinted cream/pastel instead.
+
+## Do not repeat figures
+
+`content/NAMES.md` lists every figure already in the game. Do not draw any of them again, not
+even under another name.
+
 ## What makes a good puzzle
 
 Check every pack with the tool (from the repo root):
@@ -110,3 +121,19 @@ Targets:
    `MANY-GIVENS`, `SPARSE`, `DENSE`, error and warning.
 3. Repeat until the pack is clean. Two to four review rounds is normal.
 4. Only edit your own pack files. Do not touch anything else in the repo.
+
+## Mosaic packs
+
+A mosaic pack has `"mosaic": true` and `"tile": 10` at pack level. Each figure is one BIG
+picture (30×30, or 30×20 / 20×30, or 40×30 at most; every side a multiple of the tile size). The game cuts it into
+10×10 tiles; each tile is its own small puzzle. When the player solves all tiles, the whole
+picture comes alive with the reveal animation.
+
+- Every tile must be a decent puzzle on its own: no empty tiles, tile fill 0.25–0.75. Design
+  the picture to fill the whole canvas: a big character plus a ground band, a frame, a
+  background pattern, clouds, grass, bubbles… Corners are the usual problem.
+- `name`, `blurb`, `motion`, `fx`, `pal`, `holes` work as for normal figures (one set for the
+  whole picture).
+- The checker prints one line per mosaic with the tile fill range, total givens and rounds,
+  and flags the tile ids that are SPARSE / DENSE / MANY-GIVENS. Tile ids are `figure-RC`
+  (row, column).
