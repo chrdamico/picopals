@@ -4,7 +4,7 @@ const GONE_TTL = 30 * 24 * 3600 * 1000;
 
 const DEFAULT_SETTINGS = {
   theme: 'auto',
-  assist: true,
+  instantCheck: false,
   autocross: true,
   sound: true,
   vibrate: true,

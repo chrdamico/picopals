@@ -68,6 +68,10 @@ export const sfx = {
     tone(196, { dur: 0.12, type: 'square', gain: 0.03 });
     tone(174.6, { at: 0.1, dur: 0.16, type: 'square', gain: 0.03 });
   },
+  nudge() {
+    tone(440, { dur: 0.12, type: 'sine', gain: 0.035 });
+    tone(370, { at: 0.12, dur: 0.18, type: 'sine', gain: 0.03 });
+  },
   solved() {
     [523.25, 659.25, 783.99].forEach((f, n) => tone(f, { at: n * 0.06, dur: 0.14, gain: 0.05 }));
   },

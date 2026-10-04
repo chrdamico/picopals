@@ -1,4 +1,4 @@
-import { lineMatches, clueDone, lineSolve, single, valueOf, fullMask } from './nonogram.js';
+import { lineMatches, clueDone, single, valueOf, fullMask } from './nonogram.js';
 import { buildPuzzle, signature } from './puzzle.js';
 import { db, persist } from './store.js';
 import { sfx, buzz } from './sound.js';
@@ -29,6 +29,7 @@ export class Game {
     this.givens = opts.givens || [];
     this.sig = signature(opts.fig, opts.mode, this.givens);
     this.v = new Int8Array(this.N).fill(-1);
+    this.needFilled = this.P.sol.reduce((n, x) => n + (x > 0 ? 1 : 0), 0);
     this.lock = new Uint8Array(this.N);
     for (const i of this.givens) {
       this.v[i] = this.P.sol[i];
@@ -58,7 +59,17 @@ export class Game {
   }
 
   get assist() {
-    return !!db.settings.assist;
+    return !!db.settings.instantCheck;
+  }
+
+  looksDone() {
+    let filled = 0;
+    let open = false;
+    for (const v of this.v) {
+      if (v > 0) filled++;
+      else if (v === -1) open = true;
+    }
+    return !open || filled >= this.needFilled;
   }
 
   load() {
@@ -171,6 +182,12 @@ export class Game {
     this.colEls = Array.from(el.querySelectorAll('.cc'));
     this.rowEls = Array.from(el.querySelectorAll('.rc'));
     this.hlR = el.querySelector('.hl-r');
+    el.querySelector('.msg').addEventListener('click', (e) => {
+      if (e.target.closest('[data-wrong]')) {
+        this.nudged = false;
+        this.hint();
+      }
+    });
     this.hlC = el.querySelector('.hl-c');
     this.msgEl = el.querySelector('.msg');
     this.pv = el.querySelector('.pv');
@@ -695,19 +712,12 @@ export class Game {
     const nums = el.querySelectorAll('i');
     const filledVals = vals.map((v) => (v > 0 ? v : 0));
     const complete = lineMatches(filledVals, clue);
-    let bad = false;
-    if (!complete && !this.assist) {
-      const full = fullMask(this.P.ncolors);
-      const masks = Uint8Array.from(vals, (v) => (v === -1 ? full : 1 << v));
-      bad = !lineSolve(masks, clue, new Uint8Array(vals.length));
-    }
     const done = clue.length ? clueDone(vals, clue) : [];
     if (!clue.length) nums[0]?.classList.toggle('done', vals.every((v) => v <= 0));
     nums.forEach((n, j) => {
       if (!clue.length) return;
       n.classList.toggle('done', complete || !!done[j]);
     });
-    el.classList.toggle('bad', bad);
     const was = this.lineState[k];
     this.lineState[k] = complete;
     return complete && was === false;
@@ -741,8 +751,21 @@ export class Game {
       if (!this.pendingHint && !this._keepWarn) this.setMsg(this.msgDefault);
     }
     this._keepWarn = false;
-    if (this.isSolved()) this.win();
-    else this.save();
+    if (this.isSolved()) {
+      this.win();
+      return;
+    }
+    this.save();
+    if (!this.assist && this.looksDone()) {
+      if (!this.nudged && !this.pendingHint) {
+        this.nudged = true;
+        this.setMsg(`${icon('help', 'msg-i')}<span>Not quite right yet. A few squares are off. <button class="msg-link" data-wrong>Show me</button></span>`, 'nudge');
+        sfx.nudge();
+      }
+    } else if (this.nudged) {
+      this.nudged = false;
+      if (this.msgEl.classList.contains('nudge')) this.setMsg(this.msgDefault);
+    }
   }
 
   isSolved() {
@@ -759,11 +782,11 @@ export class Game {
     let need = 0;
     let got = 0;
     for (let i = 0; i < this.N; i++) {
-      if (!sol[i]) continue;
-      need++;
-      if (this.v[i] === sol[i]) got++;
+      if (sol[i]) need++;
+      if (this.assist ? sol[i] && this.v[i] === sol[i] : this.v[i] > 0) got++;
     }
-    return need ? got / need : 1;
+    if (!need) return 1;
+    return this.assist || this.solved ? got / need : Math.min(got, need - (this.isSolved() ? 0 : 1)) / need;
   }
 
   updateHud() {

@@ -21,7 +21,7 @@ test('loads old-format saves without losing anything', () => {
   assert.equal(db.settings.theme, 'dark');
   assert.ok(db.done['a-1']);
   assert.equal(db.hatch.dex.length, 1);
-  assert.equal(db.settings.assist, true);
+  assert.equal(db.settings.instantCheck, false);
 });
 
 test('a stale window cannot erase progress written by another window', () => {

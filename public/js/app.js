@@ -309,6 +309,28 @@ function pips(lv) {
   return `<span class="pips" aria-label="Difficulty ${d} of 5">${'<i class="on"></i>'.repeat(d)}${'<i></i>'.repeat(5 - d)}</span>`;
 }
 
+const SIZE_CLASSES = [5, 8, 10, 12, 15, 20];
+
+function sizeClass(lv) {
+  const m = Math.max(lv.w, lv.h);
+  return m <= 6 ? 5 : m <= 9 ? 8 : m <= 11 ? 10 : m <= 13 ? 12 : m <= 16 ? 15 : 20;
+}
+
+const ORDER = [...LEVELS.values()].filter((l) => !l.mosaic);
+
+function nextOfSize(cls, after = null) {
+  const open = openList();
+  const start = after ? ORDER.indexOf(after) + 1 : 0;
+  const pool = [...ORDER.slice(start), ...ORDER.slice(0, start)].filter((l) => l !== after && !db.done[l.id] && open[l.world.index] && sizeClass(l) === cls);
+  if (!after) return pool[0] || null;
+  return pool.find((l) => l.world.mode === after.world.mode) || pool[0] || null;
+}
+
+function sizeLeft(cls) {
+  const open = openList();
+  return ORDER.filter((l) => !db.done[l.id] && open[l.world.index] && sizeClass(l) === cls).length;
+}
+
 function nextLevel() {
   for (let wi = 0; wi < WORLDS.length; wi++) {
     if (!worldOpen(wi)) break;
@@ -416,7 +438,9 @@ function thumbsRow(w, n = 5) {
 }
 
 function journeyScreen() {
+  const quick = SIZE_CLASSES.map((c) => ({ c, n: sizeLeft(c) })).filter((x) => x.n > 0);
   const el = screen('journey', { title: 'Journey', parent: '' }, `
+    ${quick.length ? `<div class="quick"><span>Quick play by size</span><div class="quick-row">${quick.map((x) => `<button class="qp" data-size="${x.c}"><b>${x.c}×${x.c}</b><small>${x.n} left</small></button>`).join('')}</div></div>` : ''}
     <div class="worlds">${WORLDS.map((w, wi) => {
       const open = worldOpen(wi);
       const n = solvedIn(w);
@@ -438,6 +462,13 @@ function journeyScreen() {
     ${db.settings.unlockAll ? '' : '<p class="small muted center">Too easy? Tap a locked world and beat its challenge puzzle to jump straight there. Or open everything in Settings.</p>'}`);
   const cur = nextLevel();
   if (cur) el.querySelector(`[data-go="world/${cur.world.id}"]`)?.scrollIntoView({ block: 'center' });
+  el.querySelectorAll('[data-size]').forEach((b) =>
+    b.addEventListener('click', () => {
+      sfx.tap();
+      const lv = nextOfSize(+b.dataset.size);
+      if (lv) go(`play/${lv.id}`);
+    }),
+  );
   el.querySelectorAll('[data-locked]').forEach((b) =>
     b.addEventListener('click', () => {
       sfx.tap();
@@ -543,7 +574,7 @@ function gameMenu(extra = []) {
   const s = sheet({
     title: 'Puzzle',
     html: `<div class="settings-list compact">
-      ${sw('assist', 'Check mistakes', 'A wrong square is corrected at once and counted.')}
+      ${sw('instantCheck', 'Instant mistake check', 'Wrong squares are corrected at once and cost a star. Off: you only find out at the end.')}
       ${sw('autocross', 'Auto-cross', 'Fill the rest of a finished line with crosses.')}
     </div>`,
     actions: [
@@ -641,8 +672,11 @@ function playLevel(id) {
       const nxt = w.levels.slice(lv.index + 1).find((l) => !db.done[l.id]) || w.levels.find((l) => !db.done[l.id]) || nextLevel();
       const actions = [];
       if (unlocked) actions.push({ label: `Open ${unlocked.name}`, primary: true, onClick: () => go(`world/${unlocked.id}`, true) });
-      if (nxt && nxt.id !== lv.id) actions.push({ label: 'Next', icon: 'play', primary: !unlocked, onClick: () => go(`play/${nxt.id}`, true) });
+      const cls = sizeClass(lv);
+      const same = nextOfSize(cls, lv);
+      if (nxt && nxt.id !== lv.id) actions.push({ label: same === nxt ? `Next ${cls}×${cls}` : 'Next', icon: 'play', primary: !unlocked, onClick: () => go(`play/${nxt.id}`, true) });
       else actions.push({ label: w.name, primary: !unlocked, onClick: () => back(`world/${w.id}`) });
+      if (same && same !== nxt) actions.push({ label: `Next ${cls}×${cls}`, onClick: () => go(`play/${same.id}`, true) });
       solvedMsg(gm, `Solved in ${fmtTime(res.time)}`);
       showReveal({
         fig: lv,
@@ -1013,7 +1047,8 @@ function howtoScreen() {
         <li><b>Start a drag on a filled square</b> to clear squares.</li>
         <li><b>Pinch</b> or tap <b>Zoom</b> on big grids. Drag the numbers to scroll.</li>
         <li><b>Hint</b> points at a line you can solve. Tap it again to apply it.</li>
-        <li><b>Stars:</b> 3 for no mistakes and no hints.</li>
+        <li><b>Mistakes</b> are not shown while you play. If the grid looks finished but something is off, a small note says so; tap <b>Show me</b> to see where.</li>
+        <li><b>Stars:</b> 3 for no hints (and no mistakes, if you turn on instant checking).</li>
       </ul>
     </div>
     <div class="card">
@@ -1041,7 +1076,7 @@ function settingsScreen() {
       ${seg('theme', [{ id: 'auto', label: 'Auto' }, { id: 'light', label: 'Light' }, { id: 'dark', label: 'Dark' }], s.theme)}
     </div>
     <div class="card settings-list">
-      ${sw('assist', 'Check mistakes', 'A wrong square is corrected at once and counted. Turn off for classic rules.')}
+      ${sw('instantCheck', 'Instant mistake check', 'Wrong squares are corrected at once and cost a star. Off (classic): the game only tells you at the end if something is off.')}
       ${sw('autocross', 'Auto-cross', 'Fill the rest of a finished line with crosses.')}
       ${sw('lefty', 'Left-handed', 'Put the paint buttons on the right.')}
       ${sw('sound', 'Sound', 'Soft clicks and a happy jingle.')}
