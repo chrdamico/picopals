@@ -10,8 +10,8 @@ import { showReveal, closeReveal, fmtTime, starsHtml } from './reveal.js';
 import { sfx } from './sound.js';
 import { article, buildPuzzle } from './puzzle.js';
 import { RARITY } from './critters.js';
+import { VERSION } from './version.js';
 
-const VERSION = '1.0.0';
 const app = document.getElementById('app');
 const sheetRoot = document.getElementById('sheet-root');
 const toastEl = document.getElementById('toast');
@@ -1099,7 +1099,7 @@ function settingsScreen() {
         <button class="btn" data-import>${icon('refresh')} Restore</button>
       </div>
     </div>
-    <p class="small muted center">Picopals ${VERSION} · works offline · no ads, no tracking</p>
+    <p class="small muted center">Picopals · works offline · no ads, no tracking<br>Version ${VERSION}</p>
   `);
   el.querySelectorAll('[data-set]').forEach((inp) =>
     inp.addEventListener('change', () => {

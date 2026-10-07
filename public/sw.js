@@ -1,5 +1,5 @@
 const VERSION = 'dev';
-const ASSETS = [];
+const ASSETS = ["./css/style.css","./fonts/nunito-latin.woff2","./icons/apple-touch-icon.png","./icons/favicon-32.png","./icons/favicon.svg","./icons/icon-192.png","./icons/icon-512.png","./icons/maskable-512.png","./index.html","./js/app.js","./js/critters.js","./js/daily.js","./js/figure-kinds.js","./js/figure.js","./js/game.js","./js/gen-client.js","./js/gen-worker.js","./js/icons.js","./js/levels-data.js","./js/nonogram.js","./js/puzzle.js","./js/pwa.js","./js/reveal.js","./js/rng.js","./js/sound.js","./js/store.js","./js/version.js","./manifest.webmanifest"];
 const CACHE = `picopals-${VERSION}`;
 const DEV = ['localhost', '127.0.0.1'].includes(self.location.hostname);
 

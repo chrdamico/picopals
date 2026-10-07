@@ -1,9 +1,21 @@
+import { execFileSync } from 'node:child_process';
 import { readdirSync, readFileSync, writeFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('../public/', import.meta.url));
 const version = process.argv[2] || 'dev';
+
+function committedAt() {
+  try {
+    return execFileSync('git', ['log', '-1', '--format=%cd', '--date=format:%Y-%m-%d %H:%M'], { cwd: root, encoding: 'utf8' }).trim();
+  } catch {
+    return '';
+  }
+}
+
+const label = version === 'dev' ? 'dev' : [committedAt(), version].filter(Boolean).join(' · ');
+writeFileSync(join(root, 'js/version.js'), `export const VERSION = '${label}';\n`);
 
 function walk(dir) {
   return readdirSync(dir).flatMap((name) => {
@@ -23,4 +35,4 @@ let sw = readFileSync(swPath, 'utf8');
 sw = sw.replace(/^const VERSION = .*$/m, `const VERSION = '${version}';`);
 sw = sw.replace(/^const ASSETS = .*$/m, `const ASSETS = ${JSON.stringify(assets)};`);
 writeFileSync(swPath, sw);
-console.log(`sw.js: version ${version}, ${assets.length} assets`);
+console.log(`sw.js: version ${version}, ${assets.length} assets; app version ${label}`);

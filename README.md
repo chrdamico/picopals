@@ -29,7 +29,7 @@ npm run icons                      # regenerate icons (Python + Pillow)
 
 ## Deploy
 
-Static hosting of `public/`. Both pipelines run the tests, stamp the service worker with the commit SHA (so installed apps update), and publish:
+Static hosting of `public/`. Both pipelines run the tests, stamp the service worker and `js/version.js` with the commit date and SHA (so installed apps update, and Settings shows the running version), and publish:
 
 - **GitHub Pages:** `.github/workflows/pages.yml` (Settings → Pages → Source: GitHub Actions).
 - **GitLab Pages:** `.gitlab-ci.yml`.
